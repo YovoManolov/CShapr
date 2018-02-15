@@ -1,0 +1,2 @@
+E:\MyCode\CShapr\bin\Debug\ConsoleApplication.exe.config
+E:\MyCode\CShapr\obj\x86\Debug\PS_38_Yovo.csprojResolveAssemblyReference.cache

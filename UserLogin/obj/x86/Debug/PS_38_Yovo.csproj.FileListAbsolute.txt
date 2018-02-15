@@ -1,0 +1,6 @@
+E:\MyCode\c#\UserLogin\bin\Debug\ConsoleApplication.exe.config
+E:\MyCode\c#\UserLogin\bin\Debug\ConsoleApplication.exe
+E:\MyCode\c#\UserLogin\bin\Debug\ConsoleApplication.pdb
+E:\MyCode\c#\UserLogin\obj\x86\Debug\PS_38_Yovo.csprojResolveAssemblyReference.cache
+E:\MyCode\c#\UserLogin\obj\x86\Debug\ConsoleApplication.exe
+E:\MyCode\c#\UserLogin\obj\x86\Debug\ConsoleApplication.pdb
