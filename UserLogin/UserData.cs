@@ -8,49 +8,96 @@ namespace UserLogin
 {
     static class UserData
     {
-
-        static private User[] testUsers = new User[3];
-
-        static public User[] TestUsers
+        private static List <User> testUsers = new List<User>();
+        static public List<User> TestUsers
         {
 
-            get
-            {
-                DefaultUserData();
-                return testUsers;
-            }
+            get { return testUsers; }
             set { }
 
         }
 
-        public static User isUserPassCorrect(String username ,String password)
+        public static User isUserPassCorrect(String username, String password)
         {
-            for (int i = 0; i < testUsers.Length; i++)
+            foreach (User u in testUsers)
             {
-                if(testUsers[i].Username.Equals(username) && testUsers[i].Password.Equals(password))
+                if (u.Username.Equals(username) && u.Password.Equals(password))
                 {
-                    return testUsers[i];
+                    return u;
                 }
             }
             return null;
         }
-        static private void DefaultUserData()
+        static private void ResetTestUserData()
         {
-            testUsers[0].Username = "AdminName";
-            testUsers[0].Password = "PassAdmin";
-            testUsers[0].FakNum = "11111";
-            testUsers[0].Role = 1;
-
-            testUsers[1].Username = "Student1";
-            testUsers[1].Password = "St1Pass";
-            testUsers[1].FakNum = "22222";
-            testUsers[1].Role = 5;
-
-            testUsers[2].Username = "Student2";
-            testUsers[2].Password = "St2Pass";
-            testUsers[2].FakNum = "33333";
-            testUsers[3].Role = 5;
+            testUsers.Add(new User("AdminName", "PassAdmin","11111",2, DateTime.Now,DateTime.MaxValue));
+            testUsers.Add(new User("Student1","St1Pass", "22222", 5,DateTime.Now,DateTime.MaxValue));
+            testUsers.Add(new User("Student2","St2Pass","33333", 5,DateTime.Now,DateTime.MaxValue)); 
 
         }
+
+        public static User FindUserByUserName(String Username) 
+        {
+            foreach (User u in testUsers)
+            {
+                if (u.Username.Equals(Username))
+                {
+                    return u;
+                }
+
+            }
+            return null;
+        }
+
+
+        public static void SetUserActiveTo(String UserName, DateTime activeTo)
+        {
+            if (UserName != null)
+            {
+
+                foreach (User u in testUsers)
+                {
+                    if (u.Username.Equals(UserName))
+                    {
+                        u.activeTo = activeTo;
+                        Logger.logActivity(Convert.ToString("Промяна на активност на " + u.Username));
+                    }
+                    else
+                    {
+                        Console.WriteLine("User not found in the database;");
+                    }
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Username is not a valid argument");
+            }
+        }
+
+
+        public static void AssignUserRole(String UserName,UserRoles role)
+        {
+
+            if (UserName != null)
+            {
+                foreach (User u in testUsers)
+                {
+                    if (u.Username.Equals(UserName))
+                    {
+                        u.Role = Convert.ToInt32(role);
+
+                        Logger.logActivity(Convert.ToString("Промяна на роля на " + u.Username));
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Username is not a valid argument");
+            }
+
+        }
+
+
     }
 }

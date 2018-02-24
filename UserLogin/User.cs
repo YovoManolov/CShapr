@@ -12,7 +12,20 @@ namespace UserLogin
         public String Password;
         public String FakNum;
         public Int32 Role;
+        public DateTime timeOfCreation;
+        public DateTime activeTo;
 
-        
+        public User(String Username,String Password,String FakNum,Int32 Role,DateTime timeOfCreation,
+           DateTime activeTo)
+        {
+            this.Username = Username;
+            this.Password = Password;
+            this.FakNum = FakNum;
+            this.Role = Role;
+            this.timeOfCreation = timeOfCreation;
+            this.activeTo = activeTo;
+        }
+
+        public User() {  }
     }
 }
