@@ -22,7 +22,7 @@ namespace UserLogin
             if (File.Exists("test.txt") == true)
             {
                 File.AppendAllText("text.txt", activityLine);
-            }
+            } 
         }    
 
         public static void GetCurrentSessionActivities(String filter)
