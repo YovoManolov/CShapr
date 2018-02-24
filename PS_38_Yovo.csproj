@@ -131,6 +131,9 @@
     <Content Include="UserLogin\PS_38_Yovo.csproj" />
     <Content Include="UserLogin\PS_38_Yovo.csproj.user" />
     <Content Include="UserLogin\PS_38_Yovo.sln" />
+    <Content Include="UserLogin\test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="UserLogin\UserLogin.csproj" />
   </ItemGroup>
   <ItemGroup>

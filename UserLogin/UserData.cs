@@ -19,14 +19,17 @@ namespace UserLogin
 
         public static User isUserPassCorrect(String username, String password)
         {
-            foreach (User u in testUsers)
-            {
-                if (u.Username.Equals(username) && u.Password.Equals(password))
-                {
+
+            User u = (from us in testUsers
+                      where us.Username.Equals(username) &&  us.Password.Equals(password)
+                      select us).First();
+           if(u != null){
+
                     return u;
-                }
-            }
-            return null;
+           }
+           Console.WriteLine("User with such password or/and username was not found!");
+           Console.ReadLine();
+          return null;
         }
         static private void ResetTestUserData()
         {
@@ -50,52 +53,30 @@ namespace UserLogin
         }
 
 
-        public static void SetUserActiveTo(String UserName, DateTime activeTo)
+        public static void SetUserActiveTo(Int32 UserIndex, DateTime activeTo)
         {
-            if (UserName != null)
-            {
+             testUsers.ElementAt(UserIndex).activeTo = activeTo;
+             Logger.logActivity(Convert.ToString("Промяна на активност на " + testUsers.ElementAt(UserIndex).Username));
 
-                foreach (User u in testUsers)
-                {
-                    if (u.Username.Equals(UserName))
-                    {
-                        u.activeTo = activeTo;
-                        Logger.logActivity(Convert.ToString("Промяна на активност на " + u.Username));
-                    }
-                    else
-                    {
-                        Console.WriteLine("User not found in the database;");
-                    }
-
-                }
-            }
-            else
-            {
-                Console.WriteLine("Username is not a valid argument");
-            }
         }
 
 
-        public static void AssignUserRole(String UserName,UserRoles role)
+        public static void AssignUserRole(Int32 UserIndex,UserRoles role)
         {
+             
+             testUsers.ElementAt(UserIndex).Role = Convert.ToInt32(role);
+             Logger.logActivity(Convert.ToString("Промяна на роля на " + testUsers.ElementAt(UserIndex).Username));
+                  
+        }
 
-            if (UserName != null)
+        static public Dictionary<string, int> AllUsersUsernames()
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            for (int i = 0; i < testUsers.Count; i++)
             {
-                foreach (User u in testUsers)
-                {
-                    if (u.Username.Equals(UserName))
-                    {
-                        u.Role = Convert.ToInt32(role);
-
-                        Logger.logActivity(Convert.ToString("Промяна на роля на " + u.Username));
-                    }
-                }
+                result.Add(testUsers.ElementAt(i).Username, i);
             }
-            else
-            {
-                Console.WriteLine("Username is not a valid argument");
-            }
-
+            return result;
         }
 
 
