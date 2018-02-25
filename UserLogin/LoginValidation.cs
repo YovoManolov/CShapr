@@ -14,7 +14,6 @@ namespace UserLogin
         private String Password;
         private String ErrorMessage;
 
-        public LoginValidation(String username, String password);
         public delegate void ActionOnError(String errorMsg);    
         private ActionOnError actionOnError ;
 
@@ -25,27 +24,33 @@ namespace UserLogin
             this.actionOnError = actionOnError;
         }
 
-        public static String  currentUserUsername { get; private set; }
-       
-        public static UserRoles currentUserRole { get; private set; }
+        public static String currentUserUsername
+        {
+            get;
+            private set;
+        }
+
+        public static UserRoles currentUserRole
+        {
+            get;
+            private set;
+        }                                       
 
 
         public bool ValudateUserInput(ref User user)
         {
             //User[] testUsers = UserData.TestUsers;
-
-            _currentUserRole = (UserRoles)user.Role;
-            //List<User> testUsers = UserData.TestUsers;
+            List<User> testUsers = UserData.TestUsers;
             //_currentUserRole = (UserRoles)user.Role;
-
             //------------------------------------
+
             Boolean emptyUserName;
             emptyUserName = Username.Equals(String.Empty);
             if (emptyUserName == true)
             {
                 _currentUserRole = UserRoles.ANONYMOS;
                 ErrorMessage = "Не е посочено потребителско име\n";
-                Console.WriteLine(ErrorMessage);
+                Program.printError(ErrorMessage);
                 Console.ReadLine();
                 actionOnError(ErrorMessage);
                 return false;
@@ -58,7 +63,7 @@ namespace UserLogin
             {
                 _currentUserRole = UserRoles.ANONYMOS;
                 ErrorMessage = "Не е посочена парола\n";
-                Console.WriteLine(ErrorMessage);
+                Program.printError(ErrorMessage);
                 Console.ReadLine();
                 return false;
             }
@@ -72,7 +77,7 @@ namespace UserLogin
             {
                 _currentUserRole = UserRoles.ANONYMOS;
                 ErrorMessage = "Дължината на потребителското име или паролата е по-малка от 5 символа\n";
-                Console.WriteLine(ErrorMessage);
+                Program.printError(ErrorMessage);
                 Console.ReadLine();
                 return false;
             }   
@@ -80,14 +85,13 @@ namespace UserLogin
             user = UserData.isUserPassCorrect(Username, Password);
             if (user != null)
             {
-                _currentUserRole = (UserRoles) user.Role;
+                _currentUserRole = (UserRoles)user.Role;
             }
             else
             {
                 _currentUserRole = UserRoles.ANONYMOS;
                 ErrorMessage = "Не беше намерен потребител с такова потребителско име или парола !";
-                Console.WriteLine(ErrorMessage);
-                Console.ReadLine();
+                Program.printError(ErrorMessage);
                 return false;
             }
 

@@ -13,16 +13,16 @@ namespace UserLogin
         static public void logActivity(String activity)
         {
 
-            string activityLine = DateTime.Now + ";" +
-            LoginValidation.currentUserUsername + ";" +
-            LoginValidation.currentUserRole + ";" + activity;
+            string activityLine = DateTime.Now + "\t;" +
+            LoginValidation._currentUserUsername + "\t;" +
+            LoginValidation._currentUserRole + "\t;" + activity;
 
             currentSessionActivities.Add(activityLine);
 
             if (File.Exists("test.txt") == true)
             {
-                File.AppendAllText("text.txt", activityLine);
-            } 
+                File.AppendAllText("text.txt", Environment.NewLine + activityLine);
+            }
         }    
 
         public static void GetCurrentSessionActivities(String filter)

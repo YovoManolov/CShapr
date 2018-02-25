@@ -11,29 +11,33 @@ namespace UserLogin
         private static List <User> testUsers = new List<User>();
         static public List<User> TestUsers
         {
-
-            get { return testUsers; }
-            set { }
+         
+            get {
+                ResetTestUserData();
+                return testUsers; 
+            }
+            set {}
 
         }
 
         public static User isUserPassCorrect(String username, String password)
         {
-
-            User u = (from us in testUsers
+           User u = (from us in testUsers
                       where us.Username.Equals(username) &&  us.Password.Equals(password)
-                      select us).First();
-           if(u != null){
+                      select us).FirstOrDefault();
 
-                    return u;
+           if (u != null)
+           {
+               return u;
            }
-           Console.WriteLine("User with such password or/and username was not found!");
-           Console.ReadLine();
-          return null;
+           else
+           {
+               return null;
+           }
         }
         static private void ResetTestUserData()
         {
-            testUsers.Add(new User("AdminName", "PassAdmin","11111",2, DateTime.Now,DateTime.MaxValue));
+            testUsers.Add(new User("AdminName", "AdminPass", "11111", 2, DateTime.Now, DateTime.MaxValue));
             testUsers.Add(new User("Student1","St1Pass", "22222", 5,DateTime.Now,DateTime.MaxValue));
             testUsers.Add(new User("Student2","St2Pass","33333", 5,DateTime.Now,DateTime.MaxValue)); 
 
@@ -63,10 +67,20 @@ namespace UserLogin
 
         public static void AssignUserRole(Int32 UserIndex,UserRoles role)
         {
-             
-             testUsers.ElementAt(UserIndex).Role = Convert.ToInt32(role);
-             Logger.logActivity(Convert.ToString("Промяна на роля на " + testUsers.ElementAt(UserIndex).Username));
-                  
+
+            if (testUsers.ElementAt(UserIndex).Role != Convert.ToInt32(role))
+            {
+                testUsers.ElementAt(UserIndex).Role = Convert.ToInt32(role);
+                String result = Convert.ToString("Ролята на " + testUsers.ElementAt(UserIndex).Username + "беше променена!\n");
+                Logger.logActivity(result);
+                Console.WriteLine(result);
+
+                Program.callAdminMenu();
+            }
+            else
+            {
+                Program.printError("The role you chose is the current role of the user.\n Please select another one! ");
+            } 
         }
 
         static public Dictionary<string, int> AllUsersUsernames()

@@ -50,31 +50,27 @@ namespace UserLogin
                 {
                     case (2):
                         Console.WriteLine("ADMIN");
-                        Console.ReadLine();
-                        callAdminMenu();
                         break;
                     case (3):
                         Console.WriteLine("INSPECTOR");
-                        Console.ReadLine();
                         break;
                     case (4):
                         Console.WriteLine("PROFESSOR");
-                        Console.ReadLine();
                         break;
                     case (5):
                         Console.WriteLine("STUDENT");
-                        Console.ReadLine();
                         break;
                     default:
                         Console.WriteLine("Something went wrong");
-                        Console.ReadLine();
                         break;
                 }
+
+                callAdminMenu();
                 Console.ReadLine();
             }
             else
             {
-                Console.Write("\n\nCurrent user role from \"_currentUserRole\" is " + LoginValidation._currentUserRole);
+                printError("\n\nCurrent user role from \"_currentUserRole\" is " + LoginValidation._currentUserRole);
                 Console.ReadLine();
             }
 
@@ -102,80 +98,98 @@ namespace UserLogin
 
         public static void callAdminMenu()
         {
-            Console.WriteLine("0: Изход");
+            Console.WriteLine("\n\n0: Изход");
             Console.WriteLine("1: Промяна на роля на потребител");
             Console.WriteLine("2: Промяна на активност на потребител");
             Console.WriteLine("3: Списък на потребителите");
             Console.WriteLine("4: Преглед на лог на активност");
             Console.WriteLine("5: Преглед на текуща активност");
 
+
             String Username;
             Dictionary<string, Int32> allusers = UserData.AllUsersUsernames();
 
+
+            Console.Write("\n\nMake your choice: ");
             switch (Convert.ToInt32(Console.ReadLine()))
             {
                 case 0:
+                    Environment.Exit(0);
                     break;
                 case 1:
-                    Console.Write("Enter Username of the user which role you want to change: ");
+                    Console.Write("\nEnter Username of the user which role you want to change: ");
                     Username = Console.ReadLine();
 
-                    Console.Write("Enter new role for the specified user: ");
+                    
+                    Console.WriteLine("\nEnter the new role for the specified using one of the following words : ");
+                    Console.WriteLine("ANONYMOS, ADMIN, INSPECTOR, PROFESSOR, STUDENT ");
+                    Console.Write("Make your choice: ");
+                   
                     String newRole = Console.ReadLine().Trim().ToUpper();
 
                     UserRoles convertedRoleToEnum = (UserRoles)Enum.Parse(typeof(UserRoles), newRole);
+                    bool wasTheRoleChanged = false;
                     foreach (UserRoles userRole in Enum.GetValues(typeof(UserRoles)))
                     {
                         if (userRole == convertedRoleToEnum)
                         {
+                            wasTheRoleChanged = true;
                             UserData.AssignUserRole(allusers[Username], convertedRoleToEnum);
                         }
+                    }
+                    if (wasTheRoleChanged != true)
+                    {
+                        Console.WriteLine("The role you have chosen was not found in the list of roles !\n\n");
+                        callAdminMenu();
                     }
 
                     break;
                 case 2:
-                    Console.Write("Enter Username of the user which activity period you want to change: ");
+                    Console.Write("\nEnter Username of the user which activity period you want to change: ");
                     Username = Console.ReadLine();
                     Console.WriteLine("Enter the end of the active period for the specified user : ");
                     String year, month, day;
                     Console.Write("Enter year: ");
                     year = Console.ReadLine();
-                    Console.Write("\nEnter month: ");
+                    Console.Write("Enter month: ");
                     month = Console.ReadLine();
-                    Console.Write("\nEnter day: ");
+                    Console.Write("Enter day: ");
                     day = Console.ReadLine();
 
                     DateTime dt = new DateTime(Convert.ToInt32(year),
                                                  Convert.ToInt32(month),
                                                  Convert.ToInt32(day));
 
-                    Username = Console.ReadLine();
                     UserData.SetUserActiveTo(allusers[Username], dt);
+                    String result = "Периодът на активност на " + Username +" беше променен до " + dt.ToString();
+                    Logger.logActivity(result);
+                    Console.WriteLine(result);
 
-
+                    callAdminMenu();
                     break;
 
                 case 3:
-                    Dictionary<string, int> allUsers = UserData.AllUsersUsernames();
-                    foreach (KeyValuePair<string, int> item in allUsers)
+                    //Dictionary<string, int> allUsers = UserData.AllUsersUsernames();
+                    foreach (KeyValuePair<string, int> item in allusers)
                     {
                         Console.WriteLine(item.Key);
-                        Console.ReadLine();
                     }
+                    callAdminMenu();
                     break;
                 case 4:
-                    if (File.Exists("test.txt") == true)
+                    if (File.Exists("test.txt"))
                     {
                         Console.WriteLine(File.ReadAllText("test.txt"));
                         Console.ReadLine();
                     }
+                    callAdminMenu();
                     break;
                 case 5:
-                    Console.Write("Please enter your searching filter: ");
+                    Console.Write("\nPlease enter your searching filter: ");
                     Logger.GetCurrentSessionActivities(Console.ReadLine());
                     break;
                 default:
-                    Console.WriteLine("No such option!");
+                    printError("No such option!");
                     Console.ReadLine();
                     break;
 
