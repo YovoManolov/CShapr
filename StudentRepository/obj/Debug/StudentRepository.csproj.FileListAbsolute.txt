@@ -1,0 +1,7 @@
+E:\StudentRepository\bin\Debug\StudentRepository.exe.config
+E:\StudentRepository\bin\Debug\StudentRepository.exe
+E:\StudentRepository\bin\Debug\StudentRepository.pdb
+E:\StudentRepository\obj\Debug\StudentRepository.csprojResolveAssemblyReference.cache
+E:\StudentRepository\obj\Debug\StudentRepository.csproj.CoreCompileInputs.cache
+E:\StudentRepository\obj\Debug\StudentRepository.exe
+E:\StudentRepository\obj\Debug\StudentRepository.pdb

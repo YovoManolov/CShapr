@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UserLogin
 {
-         class LoginValidation
+    class LoginValidation
     {
         public static UserRoles _currentUserRole ;
         public static String _currentUserUsername;
@@ -36,13 +36,9 @@ namespace UserLogin
             private set;
         }                                       
 
-
         public bool ValudateUserInput(ref User user)
         {
-            //User[] testUsers = UserData.TestUsers;
             List<User> testUsers = UserData.TestUsers;
-            //_currentUserRole = (UserRoles)user.Role;
-            //------------------------------------
 
             Boolean emptyUserName;
             emptyUserName = Username.Equals(String.Empty);

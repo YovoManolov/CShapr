@@ -99,6 +99,8 @@
     <None Include="UserLogin\obj\x86\Debug\PS_38_Yovo.csprojResolveAssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserLogin\RightsGranted.cs" />
+    <Compile Include="UserLogin\RoleRights.cs" />
     <Compile Include="UserLogin\Logger.cs" />
     <Compile Include="UserLogin\LoginValidation.cs" />
     <Compile Include="UserLogin\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
