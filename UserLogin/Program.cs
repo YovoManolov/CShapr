@@ -13,9 +13,11 @@ namespace UserLogin
         {
            
             User us = new User();
-            Console.WriteLine("Enter username: ");
+            RightsGranted rg = new RightsGranted();
+
+            Console.WriteLine("Въведете потребителско име : ");
             us.Username = Console.ReadLine();
-            Console.WriteLine("Enter password: ");
+            Console.WriteLine("Въведете парола : ");
             us.Password = Console.ReadLine();
 
             LoginValidation logVal = new LoginValidation(us.Username, us.Password, printError);
@@ -25,32 +27,32 @@ namespace UserLogin
             if (logVal.ValudateUserInput(ref us1))
             {
                
-                Console.WriteLine("\n\nUsername :" + us1.Username + "\nPassword :" + us1.Password
-                    + "\nFakNum :" + us1.FakNum + "\nRole :" + us1.Role);
+                Console.WriteLine("\n\nПотеребителско име :" + us1.Username + "\nПарола :" + us1.Password
+                    + "\nФакултетен номер :" + us1.FakNum + "\nРоля :" + us1.Role);
 
                 UserData.UserRoleOfCurrUser = us1.Role;
 
-                Console.Write("\n\nCurrent user role from \"_currentUserRole\" is ");
+                Console.Write("\n\nРолята на потребителя, който използва приложението е : ");
                 switch ((Int32)LoginValidation._currentUserRole)
                 {
                     case (2):
-                        Console.WriteLine("ADMIN");
+                        Console.WriteLine("Администратор");
                         callMenu(us1.Role);
                         break;
                     case (3):
-                        Console.WriteLine("INSPECTOR");
+                        Console.WriteLine("Инспектор");
                         callMenu(us1.Role);
                         break;
                     case (4):
-                        Console.WriteLine("PROFESSOR");
+                        Console.WriteLine("Професор");
                         callMenu(us1.Role);
                         break;
                     case (5):
-                        Console.WriteLine("STUDENT");
+                        Console.WriteLine("Студент");
                         callMenu(us1.Role);
                         break;
                     default:
-                        Console.WriteLine("Something went wrong");
+                        Console.WriteLine("Нещо се обърка");
                         break;
                 }
 
@@ -58,10 +60,9 @@ namespace UserLogin
             }
             else
             {
-                printError("\n\nCurrent user role from \"_currentUserRole\" is " + LoginValidation._currentUserRole);
+                printError("\n\nРолята на потребителя, който използва приложението е : " + LoginValidation._currentUserRole);
                 Console.ReadLine();
             }
-
              Console.ReadLine(); 
         }
         public static void printError(String errorMessage)
@@ -72,7 +73,7 @@ namespace UserLogin
         public static void callMenu(int uR)
         {
             List<RoleRights> currUsRR =
-                            RightsGranted.getRightsByRole((UserRoles)uR);
+                            RightsGranted.getRightsByRole((UserRoles) uR-1);
           //CanEditUsers,CanSeeLogs,CanEditStudents
             
             String Username;
@@ -89,6 +90,14 @@ namespace UserLogin
                 Console.WriteLine("4: Преглед на лог на активност");
                 Console.WriteLine("5: Преглед на текуща активност");
                 Console.Write("\n\nНаправете своя избор: ");
+                myChoiceOfMenuOption = Convert.ToInt32(Console.ReadLine());
+                if (myChoiceOfMenuOption > 5)
+                {
+                    Console.WriteLine("Невалиденa oпция от предоставеното Ви меню! ");
+                    Console.WriteLine("Моля направете отново Вашия избор: ");
+                    callMenu(uR);
+                }
+
             }
             else if(currUsRR.Contains(RoleRights.CanEditUsers))
             {
@@ -118,6 +127,7 @@ namespace UserLogin
                     callMenu(uR);
                 }
             }
+
             if(myChoiceOfMenuOption <0)
             {
               Console.WriteLine("Невалиден избор на опция от менюто!");

@@ -18,3 +18,8 @@ C:\Users\Student\Desktop\CSharp\obj\x86\Debug\ConsoleApplication.pdb
 E:\CSharp\bin\Debug\ConsoleApplication.exe.config
 E:\CSharp\obj\x86\Debug\PS_38_Yovo.csprojResolveAssemblyReference.cache
 E:\CSharp\obj\x86\Debug\PS_38_Yovo.csproj.CoreCompileInputs.cache
+E:\CSharp\bin\Debug\UserLogin\test.txt
+E:\CSharp\bin\Debug\ConsoleApplication.exe
+E:\CSharp\bin\Debug\ConsoleApplication.pdb
+E:\CSharp\obj\x86\Debug\ConsoleApplication.exe
+E:\CSharp\obj\x86\Debug\ConsoleApplication.pdb

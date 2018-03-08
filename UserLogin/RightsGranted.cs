@@ -27,9 +27,8 @@ namespace UserLogin
         }
 
         public static List<RoleRights> getRightsByRole(UserRoles role)
-        {  
-            List<RoleRights> rr = role_RolRightsDict[role];
-            return rr;
+        {
+            return role_RolRightsDict[role];
         }
 
     }
