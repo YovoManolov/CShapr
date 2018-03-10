@@ -6,7 +6,7 @@ using System.Text;
 
 namespace UserLogin
 {
-    static class Logger
+    public static class Logger
     {
         private static List<String> currentSessionActivities = new List<String>();
 

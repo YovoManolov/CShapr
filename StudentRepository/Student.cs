@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentRepository
 {
-    class Student
+    public class Student
     {
         public String ime ;
         public String prezime;

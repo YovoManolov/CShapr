@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace StudentRepository
 {
-    class StudentData
+    public class StudentData
     {
         private static List<Student> TestStudents = new List<Student>();
         private static Dictionary<long, Student> studentD = new Dictionary<Int64, Student>();
@@ -30,12 +30,14 @@ namespace StudentRepository
 
         }
 
-        public List<Student> isThereSudent(long fakNum)
+        public static Student isThereSudent(long fakNum)
         {
-            List<Student> sList = (from students in TestStudents
-                     where students.fakultetenNomer == fakNum select students).ToList();
+            Student s = null;
+            s = (Student) from student in TestStudents
+                        where student.fakultetenNomer == fakNum
+                        select student;
 
-            return sList;
+            return s;
         }
 
         public static String prepareSertificate(long fakultetenN)

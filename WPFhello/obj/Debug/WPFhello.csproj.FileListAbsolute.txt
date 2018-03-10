@@ -1,0 +1,15 @@
+E:\CSharp\WPFhello\bin\Debug\WPFhello.exe.config
+E:\CSharp\WPFhello\bin\Debug\WPFhello.exe
+E:\CSharp\WPFhello\bin\Debug\WPFhello.pdb
+E:\CSharp\WPFhello\obj\Debug\WPFhello.csprojResolveAssemblyReference.cache
+E:\CSharp\WPFhello\obj\Debug\MainWindow.g.cs
+E:\CSharp\WPFhello\obj\Debug\App.g.cs
+E:\CSharp\WPFhello\obj\Debug\WPFhello_MarkupCompile.cache
+E:\CSharp\WPFhello\obj\Debug\WPFhello_MarkupCompile.lref
+E:\CSharp\WPFhello\obj\Debug\MainWindow.baml
+E:\CSharp\WPFhello\obj\Debug\WPFhello.g.resources
+E:\CSharp\WPFhello\obj\Debug\WPFhello.Properties.Resources.resources
+E:\CSharp\WPFhello\obj\Debug\WPFhello.csproj.GenerateResource.Cache
+E:\CSharp\WPFhello\obj\Debug\WPFhello.csproj.CoreCompileInputs.cache
+E:\CSharp\WPFhello\obj\Debug\WPFhello.exe
+E:\CSharp\WPFhello\obj\Debug\WPFhello.pdb
