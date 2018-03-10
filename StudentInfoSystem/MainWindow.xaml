@@ -1,0 +1,68 @@
+﻿<Window x:Class="StudentInfoSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="Студентска информационна система" Height="373" Width="525">
+    <Grid Margin="0,0,2,-3">
+        <GroupBox x:Name="grBoxPD" Header="Лични данни" HorizontalAlignment="Left" Height="124" Margin="25,10,0,0" VerticalAlignment="Top" Width="369" RenderTransformOrigin="0.463,0.435">
+            <Grid x:Name="GrPD" HorizontalAlignment="Left" Margin="0,0,-2,3" Width="359">
+                <Label Content="Име" HorizontalAlignment="Left" Height="25" Margin="8,10,0,0" VerticalAlignment="Top" Width="93" FlowDirection="RightToLeft" />
+                <Label Content="Презиме" HorizontalAlignment="Left" Height="25" Margin="8,39,0,0" VerticalAlignment="Top" Width="93" FlowDirection="RightToLeft"/>
+                <Label Content="Фамилия" HorizontalAlignment="Left" Height="25" Margin="10,70,0,0" VerticalAlignment="Top" Width="93" FlowDirection="RightToLeft"/>
+                <TextBox x:Name="firstName" HorizontalAlignment="Left" Height="25" Margin="118,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+                <TextBox x:Name="secName" HorizontalAlignment="Left" Height="25" Margin="118,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+                <TextBox x:Name="famName" HorizontalAlignment="Left" Height="25" Margin="118,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbStInfo" Header="Студентска информация" HorizontalAlignment="Left" Margin="26,139,0,10" Width="368" RenderTransformOrigin="0.443,0.751">
+            <Grid x:Name="GrStInfo" Margin="0,4,-2,-12" Height="182" VerticalAlignment="Top">
+                <Label Content="Факултет" HorizontalAlignment="Left" Height="26" Margin="10,8,0,0" VerticalAlignment="Top" Width="86" FlowDirection="RightToLeft"/>
+                <Label Content="Специалност"  HorizontalAlignment="Left" Height="27" Margin="10,39,0,0" VerticalAlignment="Top" Width="86" FlowDirection="RightToLeft"/>
+                <Label Content="ОКС" HorizontalAlignment="Left" Height="28" Margin="10,73,0,0" VerticalAlignment="Top" Width="86" FlowDirection="RightToLeft"/>
+                <Label Content="Статус" HorizontalAlignment="Left" Height="29" Margin="10,106,0,0" VerticalAlignment="Top" Width="85" FlowDirection="RightToLeft" />
+                <Label Content="Фак. номер" HorizontalAlignment="Left" Height="26" Margin="10,140,0,0" VerticalAlignment="Top" Width="86" FlowDirection="RightToLeft" />
+
+                <TextBox  x:Name="fak"  HorizontalAlignment="Left" Height="25" Margin="101,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+                <TextBox  x:Name="spec" HorizontalAlignment="Left" Height="25" Margin="101,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+                <ListBox  x:Name="oks" HorizontalAlignment="Left" Height="25" Margin="101,73,0,0" VerticalAlignment="Top" Width="127">
+                    <ListBoxItem Content=""></ListBoxItem>
+                    <ListBoxItem Content="бакалавър"></ListBoxItem>
+                    <ListBoxItem Content="магистър"></ListBoxItem>
+                    <ListBoxItem Content="докторант"></ListBoxItem>
+                </ListBox>
+                <ListBox  x:Name="stat" HorizontalAlignment="Left" Height="25" Margin="101,106,0,0" VerticalAlignment="Top" Width="127">
+                    <ListBoxItem Content=""></ListBoxItem>
+                    <ListBoxItem Content="активен"></ListBoxItem>
+                    <ListBoxItem Content="завършил"></ListBoxItem>
+                    <ListBoxItem Content="прекъснал"></ListBoxItem>
+                </ListBox>
+                <TextBox  x:Name="fn" HorizontalAlignment="Left" Height="25" Margin="101,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127"/>
+                <Label Content="Курс" HorizontalAlignment="Left" Height="25" Margin="229,10,0,0" VerticalAlignment="Top" Width="55" FlowDirection="RightToLeft"/>
+                <Label Content="Поток" HorizontalAlignment="Left" Height="25" Margin="229,39,0,0" VerticalAlignment="Top" Width="55" FlowDirection="RightToLeft"/>
+                <Label Content="Група" HorizontalAlignment="Left" Height="25" Margin="229,73,0,0" VerticalAlignment="Top" Width="55" FlowDirection="RightToLeft"/>
+                <ListBox x:Name="kurs" HorizontalAlignment="Left" Height="25" Margin="289,10,0,0" VerticalAlignment="Top" Width="59">
+                    <ListBoxItem Content=""></ListBoxItem>
+                    <ListBoxItem Content="1"></ListBoxItem>
+                    <ListBoxItem Content="2"></ListBoxItem>
+                    <ListBoxItem Content="3"></ListBoxItem>
+                    <ListBoxItem Content="4"></ListBoxItem>
+                    <ListBoxItem Content="5"></ListBoxItem>
+                    <ListBoxItem Content="6"></ListBoxItem>
+                </ListBox>
+                <TextBox x:Name="potok" HorizontalAlignment="Left" Height="25" Margin="288,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="60"/>
+                <TextBox x:Name="grupa" HorizontalAlignment="Left" Height="25" Margin="288,73,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="60"/>
+
+            </Grid>
+        </GroupBox>
+        <Button x:Name="clearButton" Content="Изчисти" HorizontalAlignment="Left" Height="26" Margin="407,234,0,0" VerticalAlignment="Top" Width="98" Click="clearButton_Click"/>
+        <Button x:Name="LoadStButton" Content="Зареди студент" HorizontalAlignment="Left" Height="23" Margin="407,206,0,0" VerticalAlignment="Top" Width="98" Click="loadSt_Click"/>
+        <Button Content="Активирай " HorizontalAlignment="Left" Height="23" Margin="407,265,0,0" VerticalAlignment="Top" Width="98" Click="Activate_Click"/>
+        <Button Content="Деактивирай" HorizontalAlignment="Left" Margin="407,293,0,0" VerticalAlignment="Top" Width="98" Height="25" Click="Deactivate_Click"/>
+
+
+
+    </Grid>
+</Window>

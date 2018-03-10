@@ -12,12 +12,12 @@ namespace StudentRepository
 
         public static void addStudentsInList()
         {
-            Student s = new Student("ime1", "prezime1", "familiq", "fak", "ksi",
-                "bakalavyr", "prekysnal", 1231233, new DateTime(2009, 4, 24), 3, 10, 41);
-            Student s2 = new Student("ime2", "prezime2", "familiq1", "fak2321", "ksi321",
-                "bakalavyr32", "prekysnal", 1231234, new DateTime(2004, 4, 24), 3, 10, 41);
-            Student s3 = new Student("ime4", "prezime4", "familiq3", "fak2321", "ksi321",
-               "bakalavyr32", "aktiven", 1231235, new DateTime(2005, 4, 25), 4, 10, 42);
+            Student s = new Student("Йово", "Пламенов", "Манолов", "ФКСТ", "КСИ",
+                "бакалавър", "активен", 1231233, new DateTime(2009, 4, 24), 3, 10, 41);
+            Student s2 = new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
+                "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41);
+            Student s3 = new Student("Тодор", "Димитров", "Страшимиров", "ФКСТ", "КСИ",
+               "бакалавър", "активен", 1231235, new DateTime(2005, 4, 25), 4, 10, 42);
 
             TestStudents.Add(s);
             TestStudents.Add(s2);
@@ -83,7 +83,6 @@ namespace StudentRepository
         
         public static Student findStudentByFakNum(long fakNum)
         {
-
             Student s = studentD[fakNum];
             return s;
         }
