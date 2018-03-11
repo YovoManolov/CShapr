@@ -30,14 +30,37 @@ namespace StudentInfoSystem
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
-            GrPD.RowDefinitions.Clear();
-            GrPD.Children.Clear();
+            foreach (UIElement element in GrPD.Children)
+            {
+                if (element is ListBox)
+                {
+                    ListBox lb = element as ListBox;
+                    lb.SelectedItem = lb.Items[0];
+                    lb.ScrollIntoView(lb.Items[0]);
+                }
+                TextBox textbox = element as TextBox;
+                if (textbox != null)
+                {
+                    textbox.Text = String.Empty;
+                }
+            }
 
-            GrStInfo.RowDefinitions.Clear();
-            GrStInfo.Children.Clear();
+            foreach (UIElement element in GrStInfo.Children)
+            {
+                if (element is ListBox)
+                {
+                    ListBox lb = element as ListBox;
+                    lb.SelectedItem = lb.Items[0];
+                    lb.ScrollIntoView(lb.Items[0]);
+                }
+                TextBox textbox = element as TextBox;
+                if (textbox != null)
+                {
+                    textbox.Text = String.Empty;
+                }
+            }
+           
         }
-
-      
 
         private void loadSt_Click(object sender, RoutedEventArgs e)
         {
@@ -47,19 +70,22 @@ namespace StudentInfoSystem
             firstName.Text = s.ime;
             secName.Text = s.prezime;
             famName.Text = s.familiq;
-            
+
             fak.Text = s.fakultet;
             spec.Text = s.specialnost;
             switch (s.obrazovKvalifSt)
             {
                 case "бакалавър":
-                    oks.SelectedItem = oks.Items.GetItemAt(1);
+                    oks.SelectedItem = oks.Items[1];
+                    oks.ScrollIntoView(oks.Items[1]);
                     break;
                 case "магистър":
-                    oks.SelectedItem = oks.Items.GetItemAt(2);
+                    oks.SelectedItem = oks.Items[2];
+                    oks.ScrollIntoView(oks.Items[2]);
                     break;
                 case "докторант":
-                    oks.SelectedItem = oks.Items.GetItemAt(3);
+                    oks.SelectedItem = oks.Items[3];
+                    oks.ScrollIntoView(oks.Items[3]);
                     break;
                 default:
                     MessageBox.Show("Не беше намерена окс, която да съответства на тази на студента! ");
@@ -69,21 +95,27 @@ namespace StudentInfoSystem
             switch (s.statusNaStudent)
             {
                 case "активен":
-                    stat.SelectedItem = stat.Items.GetItemAt(1);
+                    stat.SelectedItem = stat.Items[1];
+                    stat.ScrollIntoView(stat.Items[1]);
                     break;
                 case "завършил":
-                    stat.SelectedItem = stat.Items.GetItemAt(2);
+                    stat.SelectedItem = stat.Items[2];
+                    stat.ScrollIntoView(stat.Items[2]);
                     break;
                 case "прекъснал":
-                    stat.SelectedItem = stat.Items.GetItemAt(3);
+                    stat.SelectedItem = stat.Items[3];
+                    stat.ScrollIntoView(stat.Items[3]);
                     break;
                 default:
                     MessageBox.Show("Не беше намерен статус, който съответства на този на студента! ");
                     break;
             }
 
-            fak.Text = Convert.ToString(s.fakultetenNomer);
-            kurs.SelectedItem = kurs.Items.GetItemAt(s.kurs);
+            fn.Text = Convert.ToString(s.fakultetenNomer);
+
+            kurs.SelectedItem = kurs.Items[s.kurs];
+            kurs.ScrollIntoView(kurs.Items[s.kurs]);
+            
             potok.Text = Convert.ToString(s.potok);
             grupa.Text = Convert.ToString(s.grupa);
 

@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS_38_Yovo", "PS_38_Yovo.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRepository", "StudentRepository\StudentRepository.csproj", "{A2A98742-309A-4D3B-A302-72B3A2E88D1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInfoSystem", "C:\Users\yovo_user\source\repos\StudentInfoSystem\StudentInfoSystem.csproj", "{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFhello", "WPFhello\WPFhello.csproj", "{7BA39732-D5AD-4508-B968-139CC275DEF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInfoSystem", "StudentInfoSystem\StudentInfoSystem.csproj", "{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +33,6 @@ Global
 		{A2A98742-309A-4D3B-A302-72B3A2E88D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2A98742-309A-4D3B-A302-72B3A2E88D1F}.Release|x86.ActiveCfg = Release|Any CPU
 		{A2A98742-309A-4D3B-A302-72B3A2E88D1F}.Release|x86.Build.0 = Release|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|x86.Build.0 = Debug|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|x86.ActiveCfg = Release|Any CPU
-		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|x86.Build.0 = Release|Any CPU
 		{7BA39732-D5AD-4508-B968-139CC275DEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7BA39732-D5AD-4508-B968-139CC275DEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BA39732-D5AD-4508-B968-139CC275DEF4}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -49,6 +41,14 @@ Global
 		{7BA39732-D5AD-4508-B968-139CC275DEF4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7BA39732-D5AD-4508-B968-139CC275DEF4}.Release|x86.ActiveCfg = Release|Any CPU
 		{7BA39732-D5AD-4508-B968-139CC275DEF4}.Release|x86.Build.0 = Release|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Debug|x86.Build.0 = Debug|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|x86.ActiveCfg = Release|Any CPU
+		{6F75F7D6-683A-4826-8CC7-F51B5DB21E6A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
