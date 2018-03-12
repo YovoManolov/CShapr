@@ -46,11 +46,11 @@ namespace StudentRepository
             Student s = studentD[fakultetenN];
 
             uverenie = "Студент с име: " + s.ime + " " + s.prezime + " " + s.familiq +
-                "\n и факултетен номер: " + s.fakultetenNomer +"поток: "+s.potok + 
-                "\nгрупа: " + s.grupa +"\n e бил записан в " + s.kurs + "курс :"+s.kurs + " от специалност : " 
+                "\n и факултетен номер: " + s.fakultetenNomer +", поток: "+s.potok + 
+                "\nгрупа: " + s.grupa +" e бил записан в " + s.kurs + "курс и изучава специалност : " 
                 + s.specialnost
-                + "\n,който се обучава за квалификационна степен: " + s.obrazovKvalifSt +
-                " придоби статус: " + s.statusNaStudent;
+                + "\nОбучава се за квалификационна степен: " + s.obrazovKvalifSt +"."+
+                "\nTекущ статус: " + s.statusNaStudent +".";
             
             return uverenie;
         }

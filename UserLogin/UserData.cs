@@ -13,13 +13,11 @@ namespace UserLogin
 
         static public List<User> TestUsers
         {
-
             get {
                 ResetTestUserData();
                 return testUsers;
             }
             set { }
-
         }
 
         public static User isUserPassCorrect(String username, String password)

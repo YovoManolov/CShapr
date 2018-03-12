@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using StudentInfoSystem;
 using StudentRepository;
+using UserLogin;
 
 namespace StudentInfoSystem
 {
@@ -26,6 +27,18 @@ namespace StudentInfoSystem
         {
             InitializeComponent();
             this.Title = "Студентска информационна система";
+            //if ((UserRoles)UserData.UserRoleOfCurrUser == UserRoles.ANONYMOS)
+            //{
+            //    foreach (Control ctrl in GrPD.Children)
+            //    {
+            //        ctrl.IsEnabled = false;
+            //    }
+
+            //    foreach (Control ctrl in GrStInfo.Children)
+            //    {
+            //        ctrl.IsEnabled = false;
+            //    }
+            //}
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
