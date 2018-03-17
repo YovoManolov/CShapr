@@ -10,7 +10,7 @@ namespace StudentRepository
     {
         public static void Main(string[] args)
         {
-            StudentData.addStudentsInList();
+            
 
             long fakultetenN;
             Console.Write("Моля въведете факултетен номер: ");

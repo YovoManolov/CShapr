@@ -8,21 +8,26 @@ namespace UserLogin
 {
     public static class UserData
     {
-        private static List<User> testUsers = new List<User>();
+        private static List<User> testUsers = new List<User>()
+        {
+            new User("AdminName", "AdminPass", "11111", 1, DateTime.Now, DateTime.MaxValue),
+            new User("Inspector", "InspPass", "44444", 2, DateTime.Now, DateTime.MaxValue),
+            new User("Professor", "ProfPass", "33333", 3, DateTime.Now, DateTime.MaxValue),
+            new User("Student2", "St2Pass", "1231233", 4, DateTime.Now, DateTime.MaxValue)
+        };
         public static int UserRoleOfCurrUser;
 
-        static public List<User> TestUsers
+        public static  List<User> TestUsers
         {
             get {
-                ResetTestUserData();
                 return testUsers;
             }
             set { }
         }
-
+       
         public static User isUserPassCorrect(String username, String password)
         {
-            User u = (from us in TestUsers
+            User u = (from us in testUsers
                       where us.Username.Equals(username) && us.Password.Equals(password)
                       select us).FirstOrDefault();
 
@@ -36,15 +41,6 @@ namespace UserLogin
             }
         }
         
-
-        static private void ResetTestUserData()
-        {
-            testUsers.Add(new User("AdminName", "AdminPass", "11111", 1, DateTime.Now, DateTime.MaxValue));
-            testUsers.Add(new User("Student1", "St1Pass", "22222", 4, DateTime.Now, DateTime.MaxValue));
-            testUsers.Add(new User("Student2", "St2Pass", "1231233",4, DateTime.Now, DateTime.MaxValue));
-            testUsers.Add(new User("Inspector", "InspPass", "44444", 2, DateTime.Now, DateTime.MaxValue));
-        }
-
         public static User FindUserByUserName(String Username)
         {
             foreach (User u in testUsers)
@@ -53,12 +49,10 @@ namespace UserLogin
                 {
                     return u;
                 }
-
             }
             return null;
         }
-
-       
+        
         public static Dictionary<string, int> AllUsersUsernames()
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
@@ -169,5 +163,16 @@ namespace UserLogin
                 Program.callMenu(UserRoleOfCurrUser);
             }
         }
+
+
+        //static private void ResetTestUserData()
+        //{
+        //    testUsers.Clear();
+        //    testUsers.Add();
+        //    testUsers.Add(new User("Student1", "St1Pass", "22222", 4, DateTime.Now, DateTime.MaxValue));
+
+        //}
+
+
     }
 }

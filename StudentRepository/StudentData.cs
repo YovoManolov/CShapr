@@ -7,29 +7,24 @@ namespace StudentRepository
 {
     public class StudentData
     {
-        private static List<Student> TestStudents = new List<Student>();
-        private static Dictionary<long, Student> studentD = new Dictionary<Int64, Student>();
-
-        public static void addStudentsInList()
+        private static List<Student> TestStudents = new List<Student>()
         {
-            Student s = new Student("Йово", "Пламенов", "Манолов", "ФКСТ", "КСИ",
-                "бакалавър", "активен", 1231233, new DateTime(2009, 4, 24), 3, 10, 41);
-            Student s2 = new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
-                "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41);
-            Student s3 = new Student("Тодор", "Димитров", "Страшимиров", "ФКСТ", "КСИ",
-               "бакалавър", "активен", 1231235, new DateTime(2005, 4, 25), 4, 10, 42);
+         new Student("Йово", "Пламенов", "Манолов", "ФКСТ", "КСИ",
+                "бакалавър", "активен", 1231233, new DateTime(2009, 4, 24), 3, 10, 41),
+         new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
+            "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41),
+         new Student("Тодор", "Димитров", "Страшимиров", "ФКСТ", "КСИ",
+           "бакалавър", "активен", 1231235, new DateTime(2005, 4, 25), 4, 10, 42)
+        };
 
-            TestStudents.Add(s);
-            TestStudents.Add(s2);
-            TestStudents.Add(s3);
+        private static Dictionary<long, Student> studentD = new Dictionary<Int64, Student>()
+        {
+            {TestStudents.ElementAt(0).fakultetenNomer, TestStudents.ElementAt(0)},
+            {TestStudents.ElementAt(1).fakultetenNomer, TestStudents.ElementAt(1)},
+            {TestStudents.ElementAt(2).fakultetenNomer, TestStudents.ElementAt(2)}
+        };
 
-            foreach (Student st in StudentData.TestStudents)
-            {
-                studentD.Add(st.fakultetenNomer, st);
-            }
-
-        }
-
+        
         public static Student isThereSudent(long fakNum)
         {
             Student s = null;
@@ -83,6 +78,7 @@ namespace StudentRepository
         
         public static Student findStudentByFakNum(long fakNum)
         {
+            
             Student s = studentD[fakNum];
             return s;
         }

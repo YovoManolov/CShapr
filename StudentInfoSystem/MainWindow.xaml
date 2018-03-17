@@ -6,10 +6,9 @@
         xmlns:local="clr-namespace:StudentInfoSystem"
         mc:Ignorable="d"
         Title="Студентска информационна система" Height="424.5" Width="799">
-    <Grid Margin="0,0,0,-68" HorizontalAlignment="Left" Width="789">
+    <Grid Margin="0,0,0,-2" HorizontalAlignment="Left" Width="789">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="635*"/>
-            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="757*"/>
         </Grid.ColumnDefinitions>
         <GroupBox x:Name="grBoxPD" Header="Лични данни" HorizontalAlignment="Left" Height="124" Margin="25,10,0,0" VerticalAlignment="Top" Width="369" RenderTransformOrigin="0.463,0.435">
             <Grid x:Name="GrPD" HorizontalAlignment="Left" Margin="0,0,-2,3" Width="359">
@@ -61,34 +60,31 @@
 
             </Grid>
         </GroupBox>
-        <Button x:Name="clearButton" Content="Изчисти" HorizontalAlignment="Left" Height="26" Margin="20,324,0,0" VerticalAlignment="Top" Width="98" Click="clearButton_Click" Grid.Column="1"/>
-        <Button x:Name="LoadStButton" Content="Зареди студент" HorizontalAlignment="Left" Height="23" Margin="20,296,0,0" VerticalAlignment="Top" Width="98" Click="loadSt_Click" Grid.Column="1"/>
-        <Button Content="Активирай " HorizontalAlignment="Left" Height="23" Margin="525,359,0,0" VerticalAlignment="Top" Width="98" Click="Activate_Click"/>
-        <Button Content="Деактивирай" HorizontalAlignment="Left" Margin="415,357,0,0" VerticalAlignment="Top" Width="98" Height="25" Click="Deactivate_Click"/>
+        <Button x:Name="clearButton" Content="Изчисти" HorizontalAlignment="Left" Height="26" Margin="663,265,0,0" VerticalAlignment="Top" Width="98" Click="clearButton_Click"/>
+        <Button x:Name="LoadStButton" Content="Зареди студент" HorizontalAlignment="Left" Height="23" Margin="663,237,0,0" VerticalAlignment="Top" Width="98" Click="loadSt_Click"/>
+        <Button Content="Активирай " HorizontalAlignment="Left" Height="23" Margin="663,296,0,0" VerticalAlignment="Top" Width="98" Click="Activate_Click"/>
+        <Button Content="Деактивирай" HorizontalAlignment="Left" Margin="663,324,0,0" VerticalAlignment="Top" Width="98" Height="25" Click="Deactivate_Click"/>
         <GroupBox Header="Login
                   " HorizontalAlignment="Left" Height="158" Margin="415,30,0,0" VerticalAlignment="Top" Width="208">
             <Grid x:Name="loginInfo" HorizontalAlignment="Left" Margin="-7,5,-6,-12" Width="209">
                 <Label HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" VerticalAlignment="Top" Width="150">
                     <Label Content="Потребителско име " Height="30" Width="142" />
                 </Label>
-                <TextBox x:Name="usernameLogin" HorizontalAlignment="Left" Height="22" Margin="32,35,0,0" TextWrapping="Wrap" Text="
-                         " VerticalAlignment="Top" Width="167"/>
+                <TextBox x:Name="usernameLogin" HorizontalAlignment="Left" Height="22" Margin="32,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167"/>
                 <Label  Content="Парола" HorizontalAlignment="Left" Height="28" Margin="19,67,0,0" VerticalAlignment="Top" Width="141"/>
                 <TextBox x:Name="passLogin" HorizontalAlignment="Left" Height="26" Margin="33,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166"/>
 
             </Grid>
         </GroupBox>
-        <Button Content="Вход" HorizontalAlignment="Left" Height="23" Margin="12,193,0,0" VerticalAlignment="Top" Width="98" Click="Login_Click" Grid.Column="1"/>
-        <Button Content="Изход" HorizontalAlignment="Left" Height="23" Margin="12,165,0,0" VerticalAlignment="Top" Width="98" Click="Logout_Click" Grid.Column="1"/>
-        <Button  x:Name="enterNotes" Content="Въвеждане на оценки" HorizontalAlignment="Left" Height="26" Margin="12,221,0,0" VerticalAlignment="Top" Width="105" Grid.Column="1" Click="enterNotes_Click"/>
-        <GroupBox Header="студент/фн" HorizontalAlignment="Left" Height="157" Margin="415,193,0,0" VerticalAlignment="Top" Width="237">
-            <Grid x:Name="fakNumGrid" HorizontalAlignment="Left" Margin="4,5,-2,-39" Width="223" Height="143" VerticalAlignment="Top">
+        <Button Content="Вход" HorizontalAlignment="Left" Height="23" Margin="628,118,0,0" VerticalAlignment="Top" Width="133" Click="Login_Click"/>
+        <Button Content="Изход" HorizontalAlignment="Left" Height="23" Margin="628,90,0,0" VerticalAlignment="Top" Width="133" Click="Logout_Click"/>
+        <Button  x:Name="enterNotes" Content="Въвеждане на оценки" HorizontalAlignment="Left" Height="26" Margin="628,149,0,0" VerticalAlignment="Top" Width="133" Click="enterNotes_Click"/>
+        <GroupBox x:Name="fakNumGB" Header="студент/фн" HorizontalAlignment="Left" Height="157" Margin="415,193,0,0" VerticalAlignment="Top" Width="237">
+            <Grid HorizontalAlignment="Left" Margin="4,5,-2,-39" Width="223" Height="143" VerticalAlignment="Top">
                 <Label Content="Въведи фн :" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
                 <TextBox x:Name="fakNumByProf" HorizontalAlignment="Left" Margin="10,49,0,68" TextWrapping="Wrap" Text="" Width="168"/>
                 <Button Content="търси" HorizontalAlignment="Left" Height="21" Margin="99,89,0,0" VerticalAlignment="Top" Width="92" Click="SearchSt_Click"/>
             </Grid>
-
-
         </GroupBox>
 
 

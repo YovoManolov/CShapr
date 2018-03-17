@@ -26,12 +26,11 @@ namespace StudentInfoSystem
         private String currentUserUsername;
         public MainWindow()
         {
-
             InitializeComponent();
             this.Title = "Студентска информационна система";
             deactivateFormFields();
             enterNotes.IsEnabled = false;
-            fakNumGrid.IsEnabled = false;
+            fakNumGB.IsEnabled = false;
 
             //if ((UserRoles)UserData.UserRoleOfCurrUser == UserRoles.ANONYMOS)
             //{
@@ -168,9 +167,7 @@ namespace StudentInfoSystem
             potok.Text = Convert.ToString(s.potok);
             grupa.Text = Convert.ToString(s.grupa);
         }
-
-
-
+        
         private void loadSt_Click(object sender, RoutedEventArgs e)
         {
             Student s = new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
@@ -178,32 +175,6 @@ namespace StudentInfoSystem
             loadStudent(s);
 
         }
-
-        private void Activate_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (Control ctrl in GrPD.Children)
-            {
-                ctrl.IsEnabled = true;
-            }
-            foreach (Control ctrl in GrStInfo.Children)
-            {
-                ctrl.IsEnabled = true;
-            }
-        }
-
-        private void Deactivate_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (Control ctrl in GrPD.Children)
-            {
-                ctrl.IsEnabled = false;
-            }
-
-            foreach (Control ctrl in GrStInfo.Children)
-            {
-                ctrl.IsEnabled = false;
-            }
-        }
-
 
         private void activateFormFields()
         {
@@ -237,7 +208,15 @@ namespace StudentInfoSystem
             String password = passLogin.Text;
 
             User resultU = UserData.isUserPassCorrect(username, password);
-            currentUserUsername = resultU.Username;
+            if(resultU == null)
+            {
+                MessageBox.Show("Потребител с такова потребитслко име или парола не съществува!");
+                return;
+            }
+            else
+            {
+                currentUserUsername = resultU.Username;
+            }
 
             if(resultU.Role == (int)UserRoles.STUDENT)
             {
@@ -248,7 +227,7 @@ namespace StudentInfoSystem
             }else if(resultU.Role == (int)UserRoles.PROFESSOR)
             {
                 enterNotes.IsEnabled = true;
-                fakNumGrid.IsEnabled = true;
+                fakNumGB.IsEnabled = true;
             }
         }
 
@@ -257,8 +236,6 @@ namespace StudentInfoSystem
             clearForm();
             deactivateFormFields();
             UserData.FindUserByUserName(currentUserUsername).Role = (int)UserRoles.ANONYMOS;
-
-
         }
 
         private void enterNotes_Click(object sender, RoutedEventArgs e)
@@ -270,7 +247,34 @@ namespace StudentInfoSystem
         {
             String fn = fakNumByProf.Text;
             Student s = StudentData.findStudentByFakNum(long.Parse(fn));
+            activateFormFields();
             loadStudent(s);
         }
+
+        private void Activate_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Control ctrl in GrPD.Children)
+            {
+                ctrl.IsEnabled = true;
+            }
+            foreach (Control ctrl in GrStInfo.Children)
+            {
+                ctrl.IsEnabled = true;
+            }
+        }
+
+        private void Deactivate_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Control ctrl in GrPD.Children)
+            {
+                ctrl.IsEnabled = false;
+            }
+
+            foreach (Control ctrl in GrStInfo.Children)
+            {
+                ctrl.IsEnabled = false;
+            }
+        }
+
     }
 }
