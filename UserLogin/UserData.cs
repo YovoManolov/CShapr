@@ -22,7 +22,7 @@ namespace UserLogin
 
         public static User isUserPassCorrect(String username, String password)
         {
-            User u = (from us in testUsers
+            User u = (from us in TestUsers
                       where us.Username.Equals(username) && us.Password.Equals(password)
                       select us).FirstOrDefault();
 
@@ -35,12 +35,14 @@ namespace UserLogin
                 return null;
             }
         }
+        
+
         static private void ResetTestUserData()
         {
-            testUsers.Add(new User("AdminName", "AdminPass", "11111", 2, DateTime.Now, DateTime.MaxValue));
-            testUsers.Add(new User("Student1", "St1Pass", "22222", 5, DateTime.Now, DateTime.MaxValue));
-            testUsers.Add(new User("Student2", "St2Pass", "33333", 5, DateTime.Now, DateTime.MaxValue));
-            testUsers.Add(new User("Inspector", "InspPass", "44444", 3, DateTime.Now, DateTime.MaxValue));
+            testUsers.Add(new User("AdminName", "AdminPass", "11111", 1, DateTime.Now, DateTime.MaxValue));
+            testUsers.Add(new User("Student1", "St1Pass", "22222", 4, DateTime.Now, DateTime.MaxValue));
+            testUsers.Add(new User("Student2", "St2Pass", "1231233",4, DateTime.Now, DateTime.MaxValue));
+            testUsers.Add(new User("Inspector", "InspPass", "44444", 2, DateTime.Now, DateTime.MaxValue));
         }
 
         public static User FindUserByUserName(String Username)

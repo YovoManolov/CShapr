@@ -15,8 +15,8 @@ namespace UserLogin
         public DateTime timeOfCreation;
         public DateTime activeTo;
 
-        public User(String Username,String Password,String FakNum,Int32 Role,DateTime timeOfCreation,
-           DateTime activeTo)
+        public User(String Username,String Password,String FakNum,
+            Int32 Role,DateTime timeOfCreation, DateTime activeTo)
         {
             this.Username = Username;
             this.Password = Password;
