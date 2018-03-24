@@ -1,0 +1,85 @@
+﻿<Page x:Class="Expenselt.ExpenseReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Expenselt"
+      mc:Ignorable="d" d:DesignWidth="300"
+      Title="ExpenseIt - View Expense"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Page.Resources>
+        <sys:String x:Key="strTitle">Expense Report For:</sys:String>
+    </Page.Resources>
+    
+    <Grid Margin="0,0,0,10">
+        <Grid.Background>
+            <ImageBrush ImageSource="E:\CSharp\Expenselt\images\watermark.jpeg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="230" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label 
+            VerticalAlignment="Center"
+            FontFamily="Trebuchet MS"
+            FontWeight="Bold"
+            FontSize="20"
+            Foreground="#0066cc"
+            Grid.Column="1" Grid.Row="0" Margin="10,10,0,0" Content="{StaticResource strTitle}"/>
+        <Grid Grid.Column="1"  Grid.Row="1" HorizontalAlignment="Left" Height="Auto" Margin="10,10,0,0"  VerticalAlignment="Top" Width="210">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label FontWeight="Bold" FontSize="14" Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center" Foreground="Black">Name:</Label>
+            <Label FontWeight="Bold" FontSize="14" Grid.Column="0"  Grid.Row="2" VerticalAlignment="Center" Foreground="Black">Department:</Label>
+        </Grid>
+        <Grid Grid.Column="1"  Grid.Row="2" HorizontalAlignment="Left" Height="Auto" Margin="10,10,0,0"  VerticalAlignment="Top" Width="210">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"  Grid.Column="0"   Height="40" Padding="5" Background="#4E87D4">
+                <Label Foreground="White" >Expense Types:</Label>
+            </Border>
+            <Border Grid.Row="0"  Grid.Column="1"   Height="40" Padding="5" Background="#4E87D4">
+                <Label Foreground="White" >Amount:</Label>
+            </Border>
+                
+            <ListBox Grid.Row="1"  Grid.Column="0"  Height="Auto"  Name="ExpenseTypesLB">
+                <ListBoxItem>Loan:</ListBoxItem>
+                <ListBoxItem>Food:</ListBoxItem>
+                <ListBoxItem>Car:</ListBoxItem>
+                <ListBoxItem>Family:</ListBoxItem>
+
+                <ListBoxItem>Food:</ListBoxItem>
+                <ListBoxItem>Car:</ListBoxItem>
+                <ListBoxItem>Family:</ListBoxItem>
+            </ListBox>
+            <ListBox Grid.Row="1"  Grid.Column="1"  Height="Auto" Name="AmountsLB">
+                <ListBoxItem>1000$</ListBoxItem>
+                <ListBoxItem>800$</ListBoxItem>
+                <ListBoxItem>500$</ListBoxItem>
+                <ListBoxItem>500$</ListBoxItem>
+
+                <ListBoxItem>800$</ListBoxItem>
+                <ListBoxItem>500$</ListBoxItem>
+                <ListBoxItem>500$</ListBoxItem>
+            </ListBox>
+
+        </Grid>
+    </Grid>
+</Page>
