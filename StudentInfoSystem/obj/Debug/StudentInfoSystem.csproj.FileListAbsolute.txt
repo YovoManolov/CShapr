@@ -20,3 +20,7 @@ E:\CSharp\StudentInfoSystem\obj\Debug\StudentInfoSystem.csproj.GenerateResource.
 E:\CSharp\StudentInfoSystem\obj\Debug\StudentInfoSystem.csproj.CoreCompileInputs.cache
 E:\CSharp\StudentInfoSystem\obj\Debug\StudentInfoSystem.exe
 E:\CSharp\StudentInfoSystem\obj\Debug\StudentInfoSystem.pdb
+E:\CSharp\StudentInfoSystem\obj\Debug\NavWindow.g.cs
+E:\CSharp\StudentInfoSystem\obj\Debug\NavWindow.baml
+E:\CSharp\StudentInfoSystem\obj\Debug\ProffesorSuccess.g.cs
+E:\CSharp\StudentInfoSystem\obj\Debug\ProffesorSuccess.baml

@@ -1,12 +1,12 @@
-﻿<Window x:Class="StudentInfoSystem.MainWindow"
+﻿<Page x:Class="StudentInfoSystem.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInfoSystem"
         mc:Ignorable="d"
-        Title="Студентска информационна система" Height="424.5" Width="799">
-    <Grid HorizontalAlignment="Left" Width="789">
+        Title="Студентска информационна система" Height="424.5" Width="1100">
+    <Grid HorizontalAlignment="Left" Width="789"  Margin="295,10,0,0" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="757*"/>
         </Grid.ColumnDefinitions>
@@ -125,5 +125,16 @@
             </Grid>
         </GroupBox>
 
+
+        <Grid HorizontalAlignment="Left" Height="270" Margin="-233,40,0,0" VerticalAlignment="Top" Width="187">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image x:Name="StudentPic" Source="E:/CSharp/200x300.jpg" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="228"  Width="164" VerticalAlignment="Center"  />
+        </Grid>
+
     </Grid>
-</Window>
+</Page>

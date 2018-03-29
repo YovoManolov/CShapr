@@ -21,7 +21,7 @@ namespace StudentInfoSystem
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Page
     {
         private String currentUserUsername;
         public MainWindow()
@@ -166,14 +166,15 @@ namespace StudentInfoSystem
 
             potok.Text = Convert.ToString(s.potok);
             grupa.Text = Convert.ToString(s.grupa);
+            
+            StudentPic.Source = new BitmapImage(new Uri(s.imagePath));
         }
         
         private void loadSt_Click(object sender, RoutedEventArgs e)
         {
             Student s = new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
-                "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41);
+                "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41, "E:/CSharp/200x300.jpg");
             loadStudent(s);
-
         }
 
         private void activateFormFields()
@@ -226,8 +227,11 @@ namespace StudentInfoSystem
                 loadStudent(s);
             }else if(resultU.Role == (int)UserRoles.PROFESSOR)
             {
-                enterNotes.IsEnabled = true;
-                fakNumGB.IsEnabled = true;
+                ProffesorSuccess proffesorSuccessPage = new ProffesorSuccess();
+                NavigationService.Navigate(proffesorSuccessPage);
+
+                //enterNotes.IsEnabled = true;
+                //fakNumGB.IsEnabled = true;
             }
         }
 
@@ -275,6 +279,10 @@ namespace StudentInfoSystem
                 ctrl.IsEnabled = false;
             }
         }
-
+        
+        private void Navig_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

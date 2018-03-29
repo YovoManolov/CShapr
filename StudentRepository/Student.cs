@@ -20,13 +20,14 @@ namespace StudentRepository
         public Int32 kurs;
         public Int32 potok;
         public Int32 grupa;
+        public String imagePath;
 
         public Student(string ime, string prezime,
             string familiq, string fakultet,
             string specialnost, string obrazovKvalifSt,
             string statusNaStudent, long fakultetenNomer,
             DateTime poslednaZaverkaNaSem, int kurs,
-            int potok, int grupa)
+            int potok, int grupa, String imagePath)
         {
             this.ime = ime;
             this.prezime = prezime;
@@ -40,6 +41,7 @@ namespace StudentRepository
             this.kurs = kurs;
             this.potok = potok;
             this.grupa = grupa;
+            this.imagePath = imagePath;
         }
 
         public Student() { }
