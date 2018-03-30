@@ -10,20 +10,19 @@ namespace StudentRepository
         private static List<Student> TestStudents = new List<Student>()
         {
          new Student("Йово", "Пламенов", "Манолов", "ФКСТ", "КСИ",
-                "бакалавър", "активен", 1231233, new DateTime(2009, 4, 24), 3, 10, 41,"E:/CSharp/200x300.jpg"),
+                "бакалавър", "активен",1231233, new DateTime(2009, 4, 24), 3, 10, 41,"E:/CSharp/StudentInfoSystem/images/200x300.jpg"),
          new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
-            "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41,"E:/CSharp/200x300.jpg"),
+            "бакалавър", "прекъснал", 1231234,new DateTime(2004, 4, 24), 3, 10, 41,"E:/CSharp/StudentInfoSystem/images/200x300.jpg"),
          new Student("Тодор", "Димитров", "Страшимиров", "ФКСТ", "КСИ",
-           "бакалавър", "активен", 1231235, new DateTime(2005, 4, 25), 4, 10, 42,"E:/CSharp/200x300.jpg")
+           "бакалавър", "активен",1231235, new DateTime(2005, 4, 25), 4, 10, 42,"E:/CSharp/StudentInfoSystem/images/200x300.jpg")
         };
 
         private static Dictionary<long, Student> studentD = new Dictionary<Int64, Student>()
         {
-            {TestStudents.ElementAt(0).fakultetenNomer, TestStudents.ElementAt(0)},
+            { TestStudents.ElementAt(0).fakultetenNomer, TestStudents.ElementAt(0)},
             {TestStudents.ElementAt(1).fakultetenNomer, TestStudents.ElementAt(1)},
             {TestStudents.ElementAt(2).fakultetenNomer, TestStudents.ElementAt(2)}
         };
-
         
         public static Student isThereSudent(long fakNum)
         {

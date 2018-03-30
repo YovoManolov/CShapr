@@ -133,7 +133,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Image x:Name="StudentPic" Source="E:/CSharp/200x300.jpg" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="228"  Width="164" VerticalAlignment="Center"  />
+            <Image x:Name="StImage"
+            HorizontalAlignment="Left"
+            Margin="10,10,0,0"
+            VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>

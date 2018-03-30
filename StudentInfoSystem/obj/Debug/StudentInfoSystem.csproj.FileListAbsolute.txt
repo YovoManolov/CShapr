@@ -24,3 +24,4 @@ E:\CSharp\StudentInfoSystem\obj\Debug\NavWindow.g.cs
 E:\CSharp\StudentInfoSystem\obj\Debug\NavWindow.baml
 E:\CSharp\StudentInfoSystem\obj\Debug\ProffesorSuccess.g.cs
 E:\CSharp\StudentInfoSystem\obj\Debug\ProffesorSuccess.baml
+E:\CSharp\StudentInfoSystem\obj\Debug\App.baml

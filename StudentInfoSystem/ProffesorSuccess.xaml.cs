@@ -40,17 +40,18 @@ namespace StudentInfoSystem
 
         private void FnFilter_Click(object sender, RoutedEventArgs e)
         {
-            var fakToCompare = stFn.Text;
+            String fakToCompare = stFn.Text;
 
-            List<String> resultFromFilter = (List<String>) from student in stDict.Values.ToList()
-                                            where student.fakultetenNomer == Convert.ToInt64(fakToCompare)
-                                            select student.ime;
+            List<Student> sL = (from st in stDict.Values.ToList()
+                                where st.fakultetenNomer == Int64.Parse(fakToCompare)
+                                select st).ToList();
 
             ProfStList.Items.Clear();
-            foreach (String ime in resultFromFilter)
+            foreach(Student s in sL)
             {
-                ProfStList.Items.Add(ime);
+                ProfStList.Items.Add((String)s.ime);
             }
+           
         }
     }
 }

@@ -23,6 +23,7 @@ namespace StudentInfoSystem
     /// </summary>
     public partial class MainWindow : Page
     {
+        private Student currentStudent;
         private String currentUserUsername;
         public MainWindow()
         {
@@ -31,7 +32,7 @@ namespace StudentInfoSystem
             deactivateFormFields();
             enterNotes.IsEnabled = false;
             fakNumGB.IsEnabled = false;
-
+            setImageSource(null);
             //if ((UserRoles)UserData.UserRoleOfCurrUser == UserRoles.ANONYMOS)
             //{
             //    foreach (Control ctrl in GrPD.Children)
@@ -166,14 +167,59 @@ namespace StudentInfoSystem
 
             potok.Text = Convert.ToString(s.potok);
             grupa.Text = Convert.ToString(s.grupa);
-            
-            StudentPic.Source = new BitmapImage(new Uri(s.imagePath));
+
+            setImageSource(currentStudent.imagePath);
+          
         }
-        
+
+        private void setImageSource(String imageUri)
+        {
+            BitmapImage b = new BitmapImage();
+            b.BeginInit();
+            if (imageUri == null)
+            {
+                b.UriSource = new Uri("E:/CSharp/StudentInfoSystem/images/default_profile.png");
+            }
+            else
+            {
+                b.UriSource = new Uri(imageUri);
+            }
+            b.EndInit();
+
+            // ... Get Image reference from sender.
+            var image = StImage as Image;
+            // ... Assign Source.
+            image.Source = b;
+        }
+
+
+        //private void StImage(object sender, RoutedEventArgs e)
+        //{
+        //    // ... Create a new BitmapImage.
+        //    BitmapImage b = new BitmapImage();
+        //    b.BeginInit();
+        //    if (currentStudent == null)
+        //    {
+        //        b.UriSource = new Uri("E:/CSharp/StudentInfoSystem/images/default_profile.png");
+        //    }
+        //    else
+        //    {
+        //        b.UriSource = new Uri(currentStudent.imagePath);
+        //    }
+        //    b.EndInit();
+
+        //    // ... Get Image reference from sender.
+        //    var image = sender as Image;
+        //    // ... Assign Source.
+        //    image.Source = b;
+        //}
+
+
         private void loadSt_Click(object sender, RoutedEventArgs e)
         {
             Student s = new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
-                "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41, "E:/CSharp/200x300.jpg");
+                "бакалавър", "прекъснал", 1231234, new DateTime(2004, 4, 24), 3, 10, 41, "E:/CSharp/StudentInfoSystem/images/200x300.jpg");
+          
             loadStudent(s);
         }
 
@@ -224,6 +270,7 @@ namespace StudentInfoSystem
                 String fakNum = resultU.FakNum;
                 Student s = StudentData.findStudentByFakNum(long.Parse(fakNum));
                 activateFormFields();
+                currentStudent = s;
                 loadStudent(s);
             }else if(resultU.Role == (int)UserRoles.PROFESSOR)
             {
