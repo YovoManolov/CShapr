@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,21 +19,40 @@ namespace Expenselt
     /// <summary>
     /// Interaction logic for ExpenseItHome.xaml
     /// </summary>
-    public partial class ExpenseItHome : Page
+    public partial class ExpenseItHome : Page , INotifyPropertyChanged 
     {
         public ExpenseItHome()
         {
             InitializeComponent();
-            ListBoxItem james = new ListBoxItem();
-            james.Content = "James";
-            peopleListBox.Items.Add(james);
-
-            ListBoxItem david = new ListBoxItem();
-            david.Content = "David";
-            peopleListBox.Items.Add(david);
-
-            peopleListBox.SelectedItem = james;
+            LastChecked = DateTime.Now;
+            this.DataContext = this;
         }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private DateTime lastChecked;
+        public DateTime LastChecked
+        {
+            get { return lastChecked; }
+            set {
+                lastChecked = value;
+                // Извикване на PropertyChanged
+                if (PropertyChanged != null)
+                    PropertyChanged(this, e: new PropertyChangedEventArgs("LastChecked"));
+            }
+        }
+
+        //event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+        //{
+        //    add
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+
+        //    remove
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
 
         private void Greeting_Click(object sender, RoutedEventArgs e)
         {
@@ -43,8 +63,15 @@ namespace Expenselt
 
         private void Navig_Click(object sender, RoutedEventArgs e)
         {
-            ExpenseReportPage expenseReportPage = new ExpenseReportPage();
+            ExpenseReportPage expenseReportPage = new ExpenseReportPage(
+                this.peopleListBox.SelectedItem);
             this.NavigationService.Navigate(expenseReportPage);
         }
+
+        private void peopleListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            LastChecked = DateTime.Now;
+        }
     }
+    
 }

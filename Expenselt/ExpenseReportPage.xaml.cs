@@ -24,5 +24,14 @@ namespace Expenselt
         {
             InitializeComponent();
         }
+        public ExpenseReportPage(object data) : this()
+        {
+            this.DataContext = data;
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

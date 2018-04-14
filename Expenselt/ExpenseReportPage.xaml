@@ -10,7 +10,6 @@
     <Page.Resources>
         <sys:String x:Key="strTitle">Expense Report For:</sys:String>
     </Page.Resources>
-    
     <Grid Margin="0,0,0,10">
         <Grid.Background>
             <ImageBrush ImageSource="E:\CSharp\Expenselt\images\watermark.jpeg"/>
@@ -40,9 +39,29 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label FontWeight="Bold" FontSize="14" Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center" Foreground="Black">Name:</Label>
-            <Label FontWeight="Bold" FontSize="14" Grid.Column="0"  Grid.Row="2" VerticalAlignment="Center" Foreground="Black">Department:</Label>
+            <Label  Grid.Column="0"  Grid.Row="0" Content="Name" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" Foreground="Black"></Label>
+            <Label  Grid.Column="1"  Grid.Row="0" Content="{Binding XPath=@Name}" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" Foreground="Black"></Label>
+            <Label Grid.Column="0"  Grid.Row="1" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" Foreground="Black">Department:</Label>
+            <Label Grid.Column="1"  Grid.Row="1" Content="{Binding XPath=@Department}" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" Foreground="Black"></Label>
         </Grid>
+        
+        <DataGrid Grid.Row="2" Grid.Column="2" ItemsSource="{Binding XPath=Expense}" AutoGenerateColumns="False" RowHeaderWidth="0" SelectionChanged="DataGrid_SelectionChanged" >
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#4E87D4" />
+                    <Setter Property="Label.VerticalAlignment" Value="Top"></Setter>
+                    <Setter Property="Label.Foreground" Value="White"></Setter>
+                    <Setter Property="FontWeight" Value="Bold"></Setter>
+                    <Setter Property="FontSize" Value="13"></Setter>
+                    <Setter Property="Height" Value="45"></Setter>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="120" Header="ExpenseType" Binding="{Binding XPath=@ExpenseType}" />
+                <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding XPath=@ExpenseAmount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
         <Grid Grid.Column="1"  Grid.Row="2" HorizontalAlignment="Left" Height="Auto" Margin="10,10,0,0"  VerticalAlignment="Top" Width="210">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -52,14 +71,16 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0"  Grid.Column="0"   Height="40" Padding="5" Background="#4E87D4">
+
+            <!--<Border Grid.Row="0"  Grid.Column="0"   Height="40" Padding="5" Background="#4E87D4">
                 <Label Foreground="White" >Expense Types:</Label>
             </Border>
             <Border Grid.Row="0"  Grid.Column="1"   Height="40" Padding="5" Background="#4E87D4">
                 <Label Foreground="White" >Amount:</Label>
-            </Border>
-                
-            <ListBox Grid.Row="1"  Grid.Column="0"  Height="Auto"  Name="ExpenseTypesLB">
+            </Border>-->
+         
+            
+            <!--<ListBox Grid.Row="1"  Grid.Column="0"  Height="Auto"  Name="ExpenseTypesLB">
                 <ListBoxItem>Loan:</ListBoxItem>
                 <ListBoxItem>Food:</ListBoxItem>
                 <ListBoxItem>Car:</ListBoxItem>
@@ -78,8 +99,7 @@
                 <ListBoxItem>800$</ListBoxItem>
                 <ListBoxItem>500$</ListBoxItem>
                 <ListBoxItem>500$</ListBoxItem>
-            </ListBox>
-
+            </ListBox>-->
         </Grid>
     </Grid>
 </Page>
