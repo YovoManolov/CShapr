@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 using StudentRepository;
 
 namespace StudentInfoSystem
@@ -19,22 +21,34 @@ namespace StudentInfoSystem
     /// <summary>
     /// Interaction logic for ProffesorSuccess.xaml
     /// </summary>
-    public partial class ProffesorSuccess : Page
+    public partial class ProffesorSuccess : Page /*INotifyPropertyChanged*/
     {
         private Dictionary<long, Student> stDict = new Dictionary<long, Student>();
+        private ObservableCollection<Student> strudentsOC = new ObservableCollection<Student>();
+
         public ProffesorSuccess()
         {
             InitializeComponent();
             loadStudentList();
+            ProfStList.ItemsSource = strudentsOC;
         }
+
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //public List ProfStListProp
+        //{
+        //    get { }
+        //    set
+        //    {   
+        //    }
+        //}
 
         public void  loadStudentList()
         {
             stDict = StudentData.getAllStudents();
-            
             foreach ( Student st in stDict.Values)
             {
-                ProfStList.Items.Add(st.ime);
+                strudentsOC.Add(st);
             }
         }
 
@@ -53,5 +67,9 @@ namespace StudentInfoSystem
             }
            
         }
+
+        //string greetingMsg;
+        //greetingMsg = (peopleListBox.SelectedItem as ListBoxItem).Content.ToString();
+        //    MessageBox.Show("Hi " + greetingMsg);
     }
 }

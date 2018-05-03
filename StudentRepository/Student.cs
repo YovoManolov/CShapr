@@ -4,7 +4,11 @@ namespace StudentRepository
 {
     public class Student
     {
-        public String ime ;
+        public String ime
+        {
+            get;
+            set;
+        }
         public String prezime;
         public String familiq;
         public String fakultet;
@@ -45,5 +49,7 @@ namespace StudentRepository
         {
             return null;
         }
+
+
     }
 }

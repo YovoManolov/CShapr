@@ -32,6 +32,18 @@
         </GroupBox>
         <GroupBox x:Name="gbStInfo" Header="Студентска информация" HorizontalAlignment="Left" Margin="28,140,0,10" Height="190" Width="350" >
             <Grid x:Name="GrStInfo" Margin="0,5,0,0" Height="160" Width="340" VerticalAlignment="Top">
+                <Grid.Resources>
+                    <XmlDataProvider x:Key="OKSTypes" XPath ="Types">
+                        <x:XData>
+                            <Types xmlns="">
+                                <OksType type ="бакалавър"></OksType>
+                                <OksType type ="магистър"></OksType>
+                                <OksType type ="докторант"></OksType>
+                            </Types>
+                        </x:XData>
+                    </XmlDataProvider>
+                </Grid.Resources>
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="90" />
                     <ColumnDefinition Width="120"  />
@@ -54,11 +66,12 @@
 
                 <TextBox Grid.Column="1"  Grid.Row="0" x:Name="fak"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="115"/>
                 <TextBox Grid.Column="1"  Grid.Row="1" x:Name="spec" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="115"/>
-                <ListBox Grid.Column="1"  Grid.Row="2" x:Name="oks" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23"  Width="115">
-                    <ListBoxItem Content=""></ListBoxItem>
-                    <ListBoxItem Content="бакалавър"></ListBoxItem>
-                    <ListBoxItem Content="магистър"></ListBoxItem>
-                    <ListBoxItem Content="докторант"></ListBoxItem>
+                <ListBox Grid.Column="1"  Grid.Row="2"  ItemsSource="{Binding Source={StaticResource OKSTypes}, XPath=OksType}" x:Name="oks" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23"  Width="115" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Foreground="Black" Content="{Binding XPath=@type}"></Label>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
                 <ListBox Grid.Column="1"  Grid.Row="3"  x:Name="stat" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="115">
                     <ListBoxItem Content=""></ListBoxItem>

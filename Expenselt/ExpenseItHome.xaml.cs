@@ -27,6 +27,7 @@ namespace Expenselt
             LastChecked = DateTime.Now;
             this.DataContext = this;
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private DateTime lastChecked;
@@ -41,19 +42,6 @@ namespace Expenselt
             }
         }
 
-        //event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
-        //{
-        //    add
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-
-        //    remove
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //}
-
         private void Greeting_Click(object sender, RoutedEventArgs e)
         {
             string greetingMsg;
@@ -63,8 +51,9 @@ namespace Expenselt
 
         private void Navig_Click(object sender, RoutedEventArgs e)
         {
-            ExpenseReportPage expenseReportPage = new ExpenseReportPage(
-                this.peopleListBox.SelectedItem);
+            ExpenseReportPage expenseReportPage =
+                                new ExpenseReportPage(this.peopleListBox.SelectedItem);
+
             this.NavigationService.Navigate(expenseReportPage);
         }
 
