@@ -60,14 +60,13 @@ namespace StudentInfoSystem
                                 where st.fakultetenNomer == Int64.Parse(fakToCompare)
                                 select st).ToList();
 
-            ProfStList.Items.Clear();
-            foreach(Student s in sL)
+            strudentsOC.Clear();
+            foreach (Student s in sL)
             {
-                ProfStList.Items.Add((String)s.ime);
+                strudentsOC.Add(s);
             }
            
         }
-
         //string greetingMsg;
         //greetingMsg = (peopleListBox.SelectedItem as ListBoxItem).Content.ToString();
         //    MessageBox.Show("Hi " + greetingMsg);

@@ -15,7 +15,11 @@ namespace StudentRepository
         public String specialnost;
         public String obrazovKvalifSt;
         public String statusNaStudent;
-        public long fakultetenNomer;
+        public long fakultetenNomer
+        {
+            get;
+            set;
+        }
         public DateTime poslednaZaverkaNaSem;
         public Int32 kurs;
         public Int32 potok;
