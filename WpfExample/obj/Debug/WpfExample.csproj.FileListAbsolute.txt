@@ -1,0 +1,16 @@
+E:\CSharp\WpfExample\bin\Debug\WpfExample.exe.config
+E:\CSharp\WpfExample\bin\Debug\WpfExample.exe
+E:\CSharp\WpfExample\bin\Debug\WpfExample.pdb
+E:\CSharp\WpfExample\obj\Debug\MainWindowView.g.cs
+E:\CSharp\WpfExample\obj\Debug\App.g.cs
+E:\CSharp\WpfExample\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\CSharp\WpfExample\obj\Debug\WpfExample_MarkupCompile.cache
+E:\CSharp\WpfExample\obj\Debug\WpfExample_MarkupCompile.lref
+E:\CSharp\WpfExample\obj\Debug\MainWindowView.baml
+E:\CSharp\WpfExample\obj\Debug\WpfExample.g.resources
+E:\CSharp\WpfExample\obj\Debug\WpfExample.Properties.Resources.resources
+E:\CSharp\WpfExample\obj\Debug\WpfExample.csproj.GenerateResource.Cache
+E:\CSharp\WpfExample\obj\Debug\WpfExample.csproj.CoreCompileInputs.cache
+E:\CSharp\WpfExample\obj\Debug\WpfExample.exe
+E:\CSharp\WpfExample\obj\Debug\WpfExample.pdb
+E:\CSharp\WpfExample\obj\Debug\WpfExample.csprojResolveAssemblyReference.cache

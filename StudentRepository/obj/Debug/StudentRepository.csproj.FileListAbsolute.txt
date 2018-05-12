@@ -5,14 +5,3 @@ E:\StudentRepository\obj\Debug\StudentRepository.csprojResolveAssemblyReference.
 E:\StudentRepository\obj\Debug\StudentRepository.csproj.CoreCompileInputs.cache
 E:\StudentRepository\obj\Debug\StudentRepository.exe
 E:\StudentRepository\obj\Debug\StudentRepository.pdb
-E:\CSharp\StudentRepository\bin\Debug\UserLogin\test.txt
-E:\CSharp\StudentRepository\bin\Debug\StudentRepository.exe.config
-E:\CSharp\StudentRepository\bin\Debug\StudentRepository.exe
-E:\CSharp\StudentRepository\bin\Debug\StudentRepository.pdb
-E:\CSharp\StudentRepository\bin\Debug\ConsoleApplication.exe
-E:\CSharp\StudentRepository\bin\Debug\ConsoleApplication.pdb
-E:\CSharp\StudentRepository\bin\Debug\ConsoleApplication.exe.config
-E:\CSharp\StudentRepository\obj\Debug\StudentRepository.csprojResolveAssemblyReference.cache
-E:\CSharp\StudentRepository\obj\Debug\StudentRepository.csproj.CoreCompileInputs.cache
-E:\CSharp\StudentRepository\obj\Debug\StudentRepository.exe
-E:\CSharp\StudentRepository\obj\Debug\StudentRepository.pdb
