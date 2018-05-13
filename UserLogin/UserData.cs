@@ -153,7 +153,7 @@ namespace UserLogin
                                              Convert.ToInt32(month),
                                              Convert.ToInt32(day));
 
-                testUsers.ElementAt(userIndex).activeTo = dt;
+                testUsers.ElementAt(userIndex).ActiveTo = dt;
                 Logger.logActivity(Convert.ToString("Промяна на активност на " + testUsers.ElementAt(userIndex).Username));
 
                 String result = "Периодът на активност на " + Username + "беше променен до " + dt.ToString();

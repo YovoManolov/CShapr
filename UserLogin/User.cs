@@ -8,22 +8,23 @@ namespace UserLogin
 {
     public class User
     {
-        public String Username;
-        public String Password;
-        public String FakNum;
-        public Int32 Role;
-        public DateTime timeOfCreation;
-        public DateTime activeTo;
+        public System.Int32 UserId { get; set; }
+        public System.String Username { get; set;  }
+        public System.String Password  {  get; set; }
+        public System.String FakNum {  get; set;}
+        public System.Int32 Role{ get; set; }
+        public System.DateTime Created { get; set; }
+        public System.DateTime? ActiveTo { get; set; }
 
         public User(String Username,String Password,String FakNum,
-            Int32 Role,DateTime timeOfCreation, DateTime activeTo)
+            Int32 Role,DateTime Created, DateTime ActiveTo)
         {
             this.Username = Username;
             this.Password = Password;
             this.FakNum = FakNum;
             this.Role = Role;
-            this.timeOfCreation = timeOfCreation;
-            this.activeTo = activeTo;
+            this.Created = Created;
+            this.ActiveTo = ActiveTo;
         }
 
         public User() {  }

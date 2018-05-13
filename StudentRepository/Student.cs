@@ -4,38 +4,33 @@ namespace StudentRepository
 {
     public class Student
     {
-        public String ime
-        {
-            get;
-            set;
-        }
-        public String prezime;
-        public String familiq;
-        public String fakultet;
-        public String specialnost;
-        public String obrazovKvalifSt;
-        public String statusNaStudent;
-        public long fakultetenNomer
-        {
-            get;
-            set;
-        }
+        public int StudentId { get; set; }
+        public string ime { get; set; }
+        public string Surname { get; set; }
+        public string FamilyName { get; set; }
+        public String fakultet { get; set; }
+        public String specialnost { get; set; }
+        public String obrazovKvalifSt { get; set; }
+        public String statusNaStudent { get; set; }
+        public long fakultetenNomer { get; set; }
         public DateTime poslednaZaverkaNaSem;
         public Int32 kurs;
         public Int32 potok;
         public Int32 grupa;
-        public String imagePath;
+        public byte[] Photo { get; set; }
 
-        public Student(string ime, string prezime,
-            string familiq, string fakultet,
+    public Student() { }
+
+    public Student(string ime, string Surname,
+            string FamilyName, string fakultet,
             string specialnost, string obrazovKvalifSt,
             string statusNaStudent, long fakultetenNomer,
             DateTime poslednaZaverkaNaSem, int kurs,
-            int potok, int grupa, String imagePath)
+            int potok, int grupa, byte[] Photo)
         {
             this.ime = ime;
-            this.prezime = prezime;
-            this.familiq = familiq;
+            this.Surname = Surname;
+            this.FamilyName = FamilyName;
             this.fakultet = fakultet;
             this.specialnost = specialnost;
             this.obrazovKvalifSt = obrazovKvalifSt;
@@ -45,15 +40,8 @@ namespace StudentRepository
             this.kurs = kurs;
             this.potok = potok;
             this.grupa = grupa;
-            this.imagePath = imagePath;
+            this.Photo = Photo;
         }
-
-        public Student() { }
-        public static Student createNewStudent()
-        {
-            return null;
-        }
-
 
     }
 }

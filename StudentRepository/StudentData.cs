@@ -2,29 +2,31 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Media.Imaging;
 
 namespace StudentRepository
 {
     public class StudentData
     {
-        private static List<Student> TestStudents = new List<Student>()
+        static byte[] imageDef = File.ReadAllBytes("E:/CSharp/StudentInfoSystem/images/200x300.jpg");
+        public static List<Student> TestStudents = new List<Student>()
         {
          new Student("Йово", "Пламенов", "Манолов", "ФКСТ", "КСИ",
-                "бакалавър", "активен",1231233, new DateTime(2009, 4, 24), 3, 10, 41,"E:/CSharp/StudentInfoSystem/images/200x300.jpg"),
+             "бакалавър", "активен",1231233, new DateTime(2009, 4, 24), 3, 10, 41,imageDef),
          new Student("Петър", "Трашев", "Фитков", "ФКСТ", "КСИ",
-            "бакалавър", "прекъснал", 1231234,new DateTime(2004, 4, 24), 3, 10, 41,"E:/CSharp/StudentInfoSystem/images/200x300.jpg"),
+            "бакалавър", "прекъснал", 1231234,new DateTime(2004, 4, 24), 3, 10, 41,imageDef),
          new Student("Тодор", "Димитров", "Страшимиров", "ФКСТ", "КСИ",
-           "бакалавър", "активен",1231235, new DateTime(2005, 4, 25), 4, 10, 42,"E:/CSharp/StudentInfoSystem/images/200x300.jpg")
+           "бакалавър", "активен",1231235, new DateTime(2005, 4, 25), 4, 10, 42,imageDef)
         };
 
         private static Dictionary<long, Student> studentD = new Dictionary<Int64, Student>()
         {
-            { TestStudents.ElementAt(0).fakultetenNomer, TestStudents.ElementAt(0)},
+            {TestStudents.ElementAt(0).fakultetenNomer, TestStudents.ElementAt(0)},
             {TestStudents.ElementAt(1).fakultetenNomer, TestStudents.ElementAt(1)},
             {TestStudents.ElementAt(2).fakultetenNomer, TestStudents.ElementAt(2)}
         };
-        
-        public static Student isThereSudent(long fakNum)
+
+      public static Student isThereSudent(long fakNum)
         {
             Student s = null;
             s = (Student) from student in TestStudents
@@ -39,7 +41,7 @@ namespace StudentRepository
             String uverenie;
             Student s = studentD[fakultetenN];
 
-            uverenie = "Студент с име: " + s.ime + " " + s.prezime + " " + s.familiq +
+            uverenie = "Студент с име: " + s.ime + " " + s.Surname + " " + s.FamilyName +
                 "\n и факултетен номер: " + s.fakultetenNomer +", поток: "+s.potok + 
                 "\nгрупа: " + s.grupa +" e бил записан в " + s.kurs + "курс и изучава специалност : " 
                 + s.specialnost

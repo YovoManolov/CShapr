@@ -66,19 +66,9 @@
 
                 <TextBox Grid.Column="1"  Grid.Row="0" x:Name="fak"  HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="115"/>
                 <TextBox Grid.Column="1"  Grid.Row="1" x:Name="spec" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="115"/>
-                <ListBox Grid.Column="1"  Grid.Row="2"  ItemsSource="{Binding Source={StaticResource OKSTypes}, XPath=OksType}" x:Name="oks" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23"  Width="115" >
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Label Foreground="Black" Content="{Binding XPath=@type}"></Label>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-                <ListBox Grid.Column="1"  Grid.Row="3"  x:Name="stat" HorizontalAlignment="Left" VerticalAlignment="Center" Height="23" Width="115">
-                    <ListBoxItem Content=""></ListBoxItem>
-                    <ListBoxItem Content="активен"></ListBoxItem>
-                    <ListBoxItem Content="завършил"></ListBoxItem>
-                    <ListBoxItem Content="прекъснал"></ListBoxItem>
-                </ListBox>
+                <ListBox  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding StudOKSChoices}" x:Name= "oks" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="24"  Width="115" />
+
+                <ListBox Grid.Column="1"  Grid.Row="3" Grid.ColumnSpan="2"  ItemsSource="{Binding StudStatusChoices}"  x:Name="stat" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="190" />
                 <TextBox Grid.Column="1"  Grid.Row="4" x:Name="fn" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="115" />
                 <Label Grid.Column="2"  Grid.Row="0" Content="Курс" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="55" FlowDirection="RightToLeft"/>
                 <Label Grid.Column="2"  Grid.Row="1" Content="Поток" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" FlowDirection="RightToLeft"/>
@@ -151,6 +141,7 @@
             Margin="10,10,0,0"
             VerticalAlignment="Top"/>
         </Grid>
+        <Button Content="Студент/Потребител" HorizontalAlignment="Left" Margin="619,352,0,0" VerticalAlignment="Top" Width="149" Click="TestStudentCount"/>
 
     </Grid>
 </Page>

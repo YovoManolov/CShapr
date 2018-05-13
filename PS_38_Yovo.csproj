@@ -49,8 +49,15 @@
     <RootNamespace>PS_38_Yovo</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,6 +89,12 @@
     <None Include=".git\objects\df\e0770424b2a19faf507a501ebfc23be8f54e7b" />
     <None Include=".git\objects\e7\6d71f0b81920936f20630c90cd752f6bc973a4" />
     <None Include=".git\refs\heads\master" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="README.md" />
     <None Include="UserLogin\App.config" />
     <None Include="UserLogin\bin\Debug\ConsoleApplication.exe.config" />
@@ -99,6 +112,12 @@
     <None Include="UserLogin\obj\x86\Debug\PS_38_Yovo.csprojResolveAssemblyReference.cache" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UserContext.cs" />
     <Compile Include="UserLogin\RightsGranted.cs" />
     <Compile Include="UserLogin\RoleRights.cs" />
     <Compile Include="UserLogin\Logger.cs" />
