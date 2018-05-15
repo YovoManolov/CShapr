@@ -13,7 +13,6 @@ namespace StudentInfoSystem
     {
         //Base constructor
         public StudentInfoContext(): base(Properties.Settings.Default.DbConnect)  { }
-
         //properties
         public DbSet<Student> Students { get; set; }
         public DbSet<User> Users { get; set; }
@@ -46,10 +45,9 @@ namespace StudentInfoSystem
             {
                 emptyUserOrStudentTb = false;
             }
-
             return emptyUserOrStudentTb;
         }
-
+       
         void CopyTestStudents()
         {
             StudentInfoContext context = new StudentInfoContext();

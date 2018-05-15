@@ -26,14 +26,13 @@ namespace StudentRepository
             {TestStudents.ElementAt(2).fakultetenNomer, TestStudents.ElementAt(2)}
         };
 
-      public static Student isThereSudent(long fakNum)
+        public static Student isThereSudent(long fakNum)
         {
-            Student s = null;
-            s = (Student) from student in TestStudents
-                        where student.fakultetenNomer == fakNum
-                        select student;
-
-            return s;
+            StudentContext context = new StudentContext();
+            Student result = (from st in context.Students
+            where st.fakultetenNomer == fakNum
+                              select st).First();
+            return result;
         }
 
         public static String prepareSertificate(long fakultetenN)

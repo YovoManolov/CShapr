@@ -26,8 +26,8 @@ namespace PS_38_Yovo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=YOVO\\SQLEXPRESS;Initial Catalog=StudentInfoDatabase;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute
+            ("Data Source=YOVO\\SQLEXPRESS;Initial Catalog=StudentInfoDatabase;Integrated Security=True")]
         public string Setting {
             get {
                 return ((string)(this["Setting"]));

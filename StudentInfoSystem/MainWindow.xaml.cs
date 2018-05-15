@@ -18,6 +18,7 @@ using UserLogin;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using PS_38_Yovo;
 
 namespace StudentInfoSystem
 {
@@ -343,7 +344,7 @@ namespace StudentInfoSystem
         {
             clearForm();
             deactivateFormFields();
-            UserData.FindUserByUserName(currentUserUsername).Role = (int)UserRoles.ANONYMOS;
+            //UserData.FindUserByUserName(currentUserUsername).Role = (int)UserRoles.ANONYMOS;
         }
 
         private void enterNotes_Click(object sender, RoutedEventArgs e)

@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PS_38_Yovo.UserLogin;
 
 namespace UserLogin
 {
@@ -12,10 +13,13 @@ namespace UserLogin
 
         static public void logActivity(String activity)
         {
-
             string activityLine = DateTime.Now + "\t;" +
             LoginValidation._currentUserUsername + "\t;" +
             LoginValidation._currentUserRole + "\t;" + activity;
+
+            LogContext logContext = new LogContext();
+            logContext.addLog(activity);
+            logContext.SaveChanges();
 
             currentSessionActivities.Add(activityLine);
 
