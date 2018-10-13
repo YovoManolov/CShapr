@@ -1,0 +1,9 @@
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\bin\XML_Manipulation.dll.config
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\bin\XML_Manipulation.dll
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\bin\XML_Manipulation.pdb
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\obj\Debug\XML_Manipulation.csproj.CoreCompileInputs.cache
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\obj\Debug\XML_Manipulation.dll
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\obj\Debug\XML_Manipulation.pdb
+E:\MyCode\CSharp\PTS\XML_Manipulation\XML_Manipulation\obj\Debug\XML_Manipulation.csprojResolveAssemblyReference.cache
