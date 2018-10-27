@@ -1,0 +1,8 @@
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\bin\WebApplication1.dll.config
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\bin\WebApplication1.dll
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\bin\WebApplication1.pdb
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\obj\Debug\WebApplication1.dll
+E:\MyCode\CSharp\PTS\XML_manipulation\WebApplication1\obj\Debug\WebApplication1.pdb
