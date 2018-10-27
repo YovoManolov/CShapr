@@ -1,0 +1,7 @@
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\bin\RESTExercise.dll.config
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\bin\RESTExercise.dll
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\bin\RESTExercise.pdb
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\obj\Debug\RESTExercise.csprojResolveAssemblyReference.cache
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\obj\Debug\RESTExercise.csproj.CoreCompileInputs.cache
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\obj\Debug\RESTExercise.dll
+E:\MyCode\CSharp\PTS\RESTExercise\RESTExercise\obj\Debug\RESTExercise.pdb
