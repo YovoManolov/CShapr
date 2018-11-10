@@ -12,7 +12,7 @@
             <table>
                 <tr>
                     <td>
-                          <table>
+            <table>
                 <tr>
                     <td><asp:Button ID="xmlContentButtonId" Width="90px" runat="server" Text="XML Content" OnClick="xmlContentButtonId_Click" /></td>
                     <td>&nbsp</td>
@@ -52,24 +52,11 @@
                         <asp:CheckBox ID="deleteFlagId" runat="server" Text="delete flag" />
                     </td>
                 </tr>
-                    <%-- <tr>
-                    <td>
-                       <asp:Button ID="DeleteButtonId" Width="90px" runat="server" Text="Delete" OnClick="DeleteButtonId_Click"/>
-                    </td>
-                    <td>Id:</td>
-                    <td>
-                        <asp:TextBox ID="DeleteIdTextBoxId" runat="server" Width="60px"></asp:TextBox>
-                    </td>
-                    <td>Value:</td>
-                    <td>
-                        <asp:TextBox ID="DeleteValueTextBoxId" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-
-                        &nbsp;</td>
-                </tr>--%>
             </table>
                     </td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
                     <td>
                         <asp:Literal ID="literalXmlContentId" runat="server"></asp:Literal>
                     </td>
