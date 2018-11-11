@@ -17,7 +17,7 @@ namespace DitherScreensCR_Yovo_38
         internal Bitmap OutMap { get; private set; }
 
         private readonly int[,] ditherMatrix;
-        private Graphics graphics;
+        //private Graphics graphics;
         private const int colorLimit = 255;
         private const int byteSize = 256;
         private int[] histogram;
@@ -35,7 +35,7 @@ namespace DitherScreensCR_Yovo_38
 
         public ImageProcessor(Panel container)
         {
-            this.graphics = container.CreateGraphics();
+            //this.graphics = container.CreateGraphics();
             this.containerHeight = container.Height;
         }
 
@@ -43,9 +43,6 @@ namespace DitherScreensCR_Yovo_38
                                               intesity >= 63 && intesity < 127 ? 63 :
                                               intesity >= 127 && intesity < 191 ? 127 :
                                               intesity >= 191 && intesity < 255 ? 191 : 0;
-
-        private static int getCount(char[] symbols, int c) => c < symbols.Length - 1 ? c + 1 : 0;
-
         
         internal void LoadImage(string fileName)
         {
@@ -77,7 +74,6 @@ namespace DitherScreensCR_Yovo_38
         internal void DitheringProcess()
         {
             int k, m;
-           
             Debug.Assert(this.InMap != null);
             if (this.OutMap != null) this.OutMap.Dispose();
             this.OutMap = new Bitmap(this.InMap);
@@ -99,7 +95,6 @@ namespace DitherScreensCR_Yovo_38
                     
                     this.OutMap.SetPixel(w, h, color);
                 }
-
         }
 
         internal void GrayScaleProcess()
@@ -115,37 +110,35 @@ namespace DitherScreensCR_Yovo_38
                 }
         }
 
-        internal void DiagramProcess()
-        {
-            Debug.Assert(this.Bitmap != null);
-            this.CreateHistogram();
-            this.graphics.Clear(Color.White);
-            var max = this.histogram[0];
-            for (int i = 0; i < colorLimit; i++)
-                if (this.histogram[i] > max)
-                    max = this.histogram[i];
+        //internal void DiagramProcess()
+        //{
+        //    Debug.Assert(this.Bitmap != null);
+        //    this.CreateHistogram();
+        //    this.graphics.Clear(Color.White);
+        //    var max = this.histogram[0];
+        //    for (int i = 0; i < colorLimit; i++)
+        //        if (this.histogram[i] > max)
+        //            max = this.histogram[i];
 
-            for (int i = 0; i < byteSize; i++)
-            {
-                double fact = this.containerHeight * this.histogram[i] * 1.0 / max;
-                var r2 = Convert.ToInt32(fact);
-                this.graphics.DrawLine(Pens.Blue, new Point(i, 0), new Point(i, r2));
-            }
-        }
+        //    for (int i = 0; i < byteSize; i++)
+        //    {
+        //        double fact = this.containerHeight * this.histogram[i] * 1.0 / max;
+        //        var r2 = Convert.ToInt32(fact);
+        //        this.graphics.DrawLine(Pens.Blue, new Point(i, 0), new Point(i, r2));
+        //    }
+        //}
 
-        internal void CreateHistogram()
-        {
-            Debug.Assert(this.Bitmap != null);
-            this.histogram = new int[byteSize];
-            for (int i = 0; i < byteSize; i++)
-                this.histogram[i] = 0;
+        //internal void CreateHistogram()
+        //{
+        //    Debug.Assert(this.Bitmap != null);
+        //    this.histogram = new int[byteSize];
+        //    for (int i = 0; i < byteSize; i++)
+        //        this.histogram[i] = 0;
 
-            for (int i = 0; i < this.Bitmap.Width; i++)
-                for (int j = 0; j < this.Bitmap.Height; j++)
-                    this.histogram[this.Bitmap.GetPixel(i, j).R] += 1;
-        }
-
-        
+        //    for (int i = 0; i < this.Bitmap.Width; i++)
+        //        for (int j = 0; j < this.Bitmap.Height; j++)
+        //            this.histogram[this.Bitmap.GetPixel(i, j).R] += 1;
+        //}
 
         bool disposed;
 
@@ -153,7 +146,7 @@ namespace DitherScreensCR_Yovo_38
         {
             if (disposed) return;
             disposed = true;
-            this.Bitmap.Dispose();
+            //this.Bitmap.Dispose();
             this.InMap?.Dispose();
             this.OutMap?.Dispose();
         }

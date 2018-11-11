@@ -34,8 +34,8 @@
             this.loadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grayScaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ditherScreenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.screeningWitTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Image)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,6 @@
             this.PB_Image.Size = new System.Drawing.Size(410, 332);
             this.PB_Image.TabIndex = 0;
             this.PB_Image.TabStop = false;
-            this.PB_Image.Click += new System.EventHandler(this.PB_Image_Click);
             // 
             // menuStrip1
             // 
@@ -55,7 +54,7 @@
             this.ditherScreenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(914, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,42 +73,41 @@
             // loadImageToolStripMenuItem
             // 
             this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.loadImageToolStripMenuItem.Text = "Load image";
             this.loadImageToolStripMenuItem.Click += new System.EventHandler(this.OnLoadImage);
             // 
             // grayScaleToolStripMenuItem
             // 
             this.grayScaleToolStripMenuItem.Name = "grayScaleToolStripMenuItem";
-            this.grayScaleToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.grayScaleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.grayScaleToolStripMenuItem.Text = "Gray scale";
             this.grayScaleToolStripMenuItem.Click += new System.EventHandler(this.OnGrayScaleProcess);
             // 
             // ditherScreenToolStripMenuItem1
             // 
             this.ditherScreenToolStripMenuItem1.Name = "ditherScreenToolStripMenuItem1";
-            this.ditherScreenToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.ditherScreenToolStripMenuItem1.Text = "Dither screen";
+            this.ditherScreenToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
+            this.ditherScreenToolStripMenuItem1.Text = "Dither screening";
             this.ditherScreenToolStripMenuItem1.Click += new System.EventHandler(this.OnDitheringProcess);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
             // 
             // screeningWitTextToolStripMenuItem
             // 
             this.screeningWitTextToolStripMenuItem.Name = "screeningWitTextToolStripMenuItem";
-            this.screeningWitTextToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.screeningWitTextToolStripMenuItem.Text = "Screening wit text";
+            this.screeningWitTextToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
             // 
             // DitherScreening
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 437);
+            this.ClientSize = new System.Drawing.Size(582, 437);
             this.Controls.Add(this.PB_Image);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

@@ -59,10 +59,6 @@ namespace DitherScreensCR_Yovo_38
             imageProcessor.GrayScaleProcess();
             ApplyImage(imageProcessor.OutMap);
         }
-
-        private void PB_Image_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
