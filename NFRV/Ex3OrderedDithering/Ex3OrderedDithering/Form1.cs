@@ -65,7 +65,6 @@ namespace Ex3OrderedDithering
             ApplyImage(imageProcessor.OutMap);
         }
 
-
         private void OnGrayScaleProcess(object sender, EventArgs e)
         {
             imageProcessor.GrayScaleProcess();
